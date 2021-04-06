@@ -1,0 +1,33 @@
+
+.tour {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 8px 20px 0 rgb(0 0 0 / 19%);
+    margin-bottom: 50px;
+
+}
+.tour__infor {
+    display: flex;
+    margin: 30px;
+}
+
+.tour__title {
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.tour__price {
+    display: flex;
+	float: left;
+}
+
+.tour__text {
+    margin: 30px;
+    font-size:  15px;
+}
+
+.tour__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}

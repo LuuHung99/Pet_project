@@ -1,0 +1,23 @@
+.review {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 8px 20px 0 rgb(0 0 0 / 19%);
+
+}
+
+.review__circle {
+    width: 150px;
+    height: 150px;
+    background-color:  blue;
+    border-radius: 50%;
+    margin: 0 auto;
+    /* position: relative; */
+    margin-top: 40px;
+
+}
+
+img {
+    /* position: absolute; */
+    margin: 0 auto;
+    top: 46px;
+    left: 304px;
+    object-fit: cover;
+}

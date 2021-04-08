@@ -7,24 +7,34 @@ import Link from 'next/link'
 function HomePage() {
   return (
     <div>
-        <ul>
-      <li>
-        <Link href="/ReminderComplete">
-          <a>ReminderComplete </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/ToursComplete">
-          <a>ToursComplete</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/ReviewsComplete">
-          <a>ReviewsComplete</a>
-        </Link>
-      </li>
-    </ul>
-      </div>
+      <ul>
+        <li>
+          <Link href="/ReminderComplete">
+            <a>ReminderComplete </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/ToursComplete">
+            <a>ToursComplete</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/ReviewsComplete">
+            <a>ReviewsComplete</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Accordion">
+            <a>Accordion</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/OurMenu">
+            <a>OurMenus</a>
+          </Link>
+        </li>
+      </ul>
+    </div>
   )
 }
 

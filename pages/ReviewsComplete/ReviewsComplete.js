@@ -4,39 +4,40 @@ import 'antd/dist/antd.css';
 import {LeftOutlined, RightOutlined} from '@ant-design/icons';
 
 function ReviewsComplete(props) {
+    const {items} = props;
     return (
         <>
             <Row className="container">
-                <Col span={12} offset={6} className="row review">
+                <Col span={8} offset={4} style={{textAlign: 'center', padding: '30px', marginBottom: '20px'}} className="row review">
                     <div className="review__circle">
                         
                     </div>
                     <div className="review__img">
                         <img 
                             style={{width: '150px', height: '150px', borderRadius: '50%'}}
-                            src={props.url}
-                            alt=""
+                            src={items.url}
+                            alt=""  
                         >
 
                         </img>
                     </div>
                     <div className="review__info">
                         <div className="review__name">
-                            <b>{props.name}</b>
+                            <b>{items.name}</b>
                         </div>
                         <div className="review__direction">
-                            {props.direction}
+                            {items.direction}
                         </div>
                     </div>
                     <div className="review__text">
-                        <p style={{textAlign: 'center', margin: '30px'}}>{props.text}</p>
+                        <p style={{ margin: '30px'}}>{items.text}</p>
                     </div>
                     <div className="review__icon">
                         <LeftOutlined />
                         <RightOutlined />
                     </div>
                     <div className="review___button">
-                        <button>Subprise me</button>
+                        <button onClick={()=>props.nextItem(items.id)}>Subprise me</button>
                     </div>
                 </Col>
             </Row>

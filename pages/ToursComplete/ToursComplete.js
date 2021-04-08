@@ -12,7 +12,7 @@ function ToursComplete(props) {
     // }
     const [ellipsis, setEllipsis] = useState(true);
     const {item}= props
-    console.log(props);
+    // console.log(props);
     
     return (
         <>

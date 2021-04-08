@@ -1,13 +1,16 @@
 import React from 'react';
 
 function detailReminder(props) {
+    const {item} = props
+    // console.log(props);
+
     return (
         <div>
             <div className="person" >
-                <img className="img" src={props.url} alt=""/>
+                <img className="img" src={item.url} alt=""/>
                 <div className="person__name">
-                    <h4>{props.name}</h4>
-                    <p>{props.old}</p>
+                    <h4>{item.name}</h4>
+                    <p>{item.old}</p>
                 </div>
             </div>
         </div>

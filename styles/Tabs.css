@@ -1,0 +1,22 @@
+.hrizon {
+    width: 7%;
+    height: 3px;
+    background-color: #c59d5f;
+}
+.tab_like {
+    list-style-type: none;
+    font-size: 30px;
+    text-transform: uppercase;
+
+}
+
+.tab_like li:hover {
+    color: rgb(25, 128, 175);
+    cursor: pointer;
+    padding: 20px;
+}
+
+.date {
+    opacity: 0.5;
+}
+

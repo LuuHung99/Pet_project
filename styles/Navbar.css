@@ -1,0 +1,26 @@
+header.ant-layout-header {
+    background-color: #ffffff;
+    padding-left: 200px;
+}
+
+.list_menu {
+    padding-left: 150px;
+    display: flex;
+    list-style-type: none;
+}
+
+.list_menu a {
+    padding-left: 40px;
+    cursor: pointer;
+    color: black;
+}
+
+.list_menu:hover {
+    color: #0e7a32;
+}
+
+.ant-col.ant-col-4 {
+    color: #5b8c00;
+    font-size: 24px;
+    text-shadow: 1px 1px #a3a1a1;
+}

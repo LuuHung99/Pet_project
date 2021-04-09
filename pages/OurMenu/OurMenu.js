@@ -6,7 +6,7 @@ function OurMenu(props) {
     const {items} = props;
     return (
         <Row style={{paddingTop: '30px', paddingLeft: '200px', paddingRight: '150px'}} >
-            <Col span={12}>
+            <Col span={12} offset={0}>
                 <div className="menu_info">
                     <div className="menu_img">
                         <img src={items.url}/>

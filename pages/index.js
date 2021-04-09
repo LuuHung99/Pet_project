@@ -33,6 +33,16 @@ function HomePage() {
             <a>OurMenus</a>
           </Link>
         </li>
+        <li>
+          <Link href="/Tabs">
+            <a>Tabs</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Navbar">
+            <a>Navbar</a>
+          </Link>
+        </li>
       </ul>
     </div>
   )

@@ -80,36 +80,42 @@ function OurMenus(props) {
     const [data, setData] = useState(listMenu);
     const [showList, setShowList] = useState('all');
 
-    const handleShowAll = (id) => {
-        console.log(id.target);
+    const handleShowAll = () => {
+        setShowList('all')
+        // console.log(id);
     }
 
-    const handleShowBreakfast = (id) => {
-        // setShowList('breakfast');
-        console.log(id.target);
+    const handleShowBreakfast = () => {
+        setShowList('breakfast');
+        // console.log(id.target);
     }
 
-    const handleShowLunch = (id) => {
-        // setShowList('lunch');
-        console.log(id.target);
+    const handleShowLunch = (item) => {
+        setShowList('lunch', item.status);
+        // console.log(id.target);
 
     }
 
-    const handleShowShakes = (id) => {
-        console.log(id.target);
+    const handleShowShakes = () => {
+        // console.log(id.target);
         setShowList("shakes");
     }
-    
+
 
     const renderStatus = data.filter(
-        (items) => showList === 'all' || showList === items.status  )
+        
+        (items) => showList === 'all' || showList === items.status  
+        
+    )
+    console.log(renderStatus);
+
 
     return (
         <div className="menu_container">
             <div className="menu">
                 <h1 >Our Menu</h1>
                 <hr />
-                <ul>
+                <ul renderStatus={ renderStatus}>
                     <li onClick={handleShowAll}>All</li>
                     <li onClick={handleShowBreakfast}>Breakfast</li>
                     <li onClick={handleShowLunch}>Lunch</li>
@@ -117,8 +123,8 @@ function OurMenus(props) {
                 </ul>
             
             </div>
-            <div className="items">
-                {data.map (e => <OurMenu items={e} renderStatus={renderStatus} />)}
+            <div className="items">     
+                {data.map (e => <OurMenu items={e} />)}
             </div>
         </div>
         

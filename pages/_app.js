@@ -5,6 +5,8 @@ import '../styles/Accordion.css';
 import '../styles/OurMenu.css';
 import '../styles/Tabs.css';
 import '../styles/Navbar.css';
+import '../styles/Grocery_Bug.css';
+import '../styles/SideBarModel.css';
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

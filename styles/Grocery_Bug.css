@@ -1,0 +1,51 @@
+.grocery_container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 8px 20px 0 rgb(0 0 0 / 19%);
+    width: 80vh;
+    margin: 0 auto;
+    padding-top: 30px;
+    margin-top: 100px;
+}
+.grocery_title {
+    text-align: center;
+}
+input.ant-input.ant-input-lg {
+    width: 400px;
+
+    
+}
+.grocery_input {
+    padding: 20px;
+}
+
+.grocery_items {
+    margin: 20px;
+    width: 525px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.grocery_items:hover {
+    background-color:#b3c9da;
+}
+
+.grocery_text {
+    margin-top:5px;
+}
+ .grocery_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+.grocery_icons {
+    margin-left: 20px;
+    cursor: pointer;
+}
+.anticon svg {
+    display: inline-block;
+    margin-left: 10px;
+}

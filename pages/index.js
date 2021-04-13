@@ -43,6 +43,16 @@ function HomePage() {
             <a>Navbar</a>
           </Link>
         </li>
+        <li>
+          <Link href="/Grocery_Bug">
+            <a>Grucery Bug</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/SideBarModel">
+            <a>Slide Bar Model</a>
+          </Link>
+        </li>
       </ul>
     </div>
   )

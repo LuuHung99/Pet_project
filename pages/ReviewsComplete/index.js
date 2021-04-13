@@ -2,28 +2,28 @@ import React, {useState} from 'react';
 import ReviewsComplete from './ReviewsComplete';
 const listReivews = [
     {
-        id: '1',
+        id: 1,
         url: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
         name: 'Susan Smith',
         direction: 'WEB DEVELOPER',
         text: 'Im baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry',
     },
     {
-        id: '2',
+        id: 2,
         url: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg',
         name: 'Anna Johnson',
         direction: 'WEB DESIGNER',
         text: 'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
     },
     {
-        id: '3',
+        id: 3,
         url: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
         name: 'Peter Jones',
         direction: 'WINTERN',
         text: 'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
     },
     {
-        id: '4',
+        id: 4,
         url: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
         name: 'Bill Anderson',
         direction: 'THE BOSS',
@@ -35,12 +35,28 @@ function Reviews(props) {
    
 
     const [listReview, setListReview] = useState(listReivews);
+    const [showView, setShowView] = useState(1);
+
+    const randomNext = Math.ceil(Math.random() * 4);
+    console.log(randomNext);
+
+    const handleShowNext = () => {
+
+        setShowView(randomNext);
+        
+    }
+
+
     return (
         <div>
             <h1 style={{textAlign: 'center'}}><b>Our Reviews</b></h1>
             <hr></hr>
 
-            {listReview.map(e=> <ReviewsComplete items={e} />) }
+            {listReview.map((e)=> {
+                if(e.id === showView )
+                    return <ReviewsComplete items={e} key={e} showNext={handleShowNext} />
+            }) }
+            
         </div>
     );
 }

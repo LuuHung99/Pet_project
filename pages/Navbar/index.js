@@ -1,13 +1,19 @@
 import React from 'react';
 import ListNav from './listNav';
-import DetailNav from './detailNav';
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+//   } from "react-router-dom";
 
 function Navbar(props) {
     return (
-        <div>
-            <ListNav />
-            <DetailNav />
-        </div>
+            <div>
+                
+                    <ListNav />
+              
+            </div>
     );
 }
 

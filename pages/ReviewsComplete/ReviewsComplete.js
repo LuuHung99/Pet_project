@@ -37,7 +37,7 @@ function ReviewsComplete(props) {
                         <RightOutlined />
                     </div>
                     <div className="review___button">
-                        <button onClick={()=>props.nextItem(items.id)}>Subprise me</button>
+                        <button  onClick={()=> props.showNext(items.id)} >Subprise me</button>
                     </div>
                 </Col>
             </Row>

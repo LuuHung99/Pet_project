@@ -51,7 +51,7 @@ function ListTour() {
     return (
         <div className="wrapper">
             <h1 style={{textAlign: 'center', marginTop: '40px', fontWeight: 'bold', fontSize: '40px'}}>Our Tours</h1>
-            {data.map(e => <ToursComplete item={e} deleteItems={deleteItems} />)}
+            {data.map(e => <ToursComplete item={e} key={e} deleteItems={deleteItems} />)}
         </div>
     );
 }

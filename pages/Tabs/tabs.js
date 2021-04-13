@@ -15,6 +15,9 @@ function Tabs(props) {
             <div style={{paddingRight: '100px'}} className="text">
                 {items.text}
             </div>
+            <Button style={{marginLeft: '550px', marginTop: '30px'}} type="primary" danger>
+                Primary
+            </Button>
         </div>
     );
 }

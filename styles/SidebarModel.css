@@ -1,0 +1,16 @@
+.side_model {
+    position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.sidebar {
+	padding-left: 40px;
+	/* display: none; */
+}
+.icon_sidebar {
+	cursor: pointer;
+	padding: 40px;
+	font-size: 300%;
+	color: rgb(13, 120, 134);
+}

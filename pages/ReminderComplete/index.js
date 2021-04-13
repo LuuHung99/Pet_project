@@ -43,15 +43,7 @@ function TodoList() {
     const [data, setData] = useState(InitTodo);
   
     function DeleteAll () {
-        // alert('Delete thanh cong!')
-        // console.log(i);
-        // const newItems = [...deleteItem];
-        // newItems.slice(i);
-        // setDeleteItem(newItems);
-        // const newItems = [...deleteItem];
-        //  newItems.slice();
-        //  console.log(setDeleteItem(newItems));
-        // setDeleteItem(newItems);
+      
         const newList = data.filter(e=> {});
         setData(newList);
         
@@ -65,7 +57,7 @@ function TodoList() {
                         <div className="reminder__block">
                             <div>
                                 {
-                                    data.map(e=> <DetailReminder item={e}/>)
+                                    data.map(e=> <DetailReminder item={e} key={e}/>)
                                 }
                                 <Button 
                                     type="primary" block 

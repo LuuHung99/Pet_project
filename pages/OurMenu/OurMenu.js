@@ -16,6 +16,7 @@ function OurMenu(props) {
                             <div className="name">
                                 <h3>{items.title}</h3>
                             </div>
+                            <hr />
                             <div className="price">
                                 {items.price}
                             </div>
@@ -38,6 +39,7 @@ function OurMenu(props) {
                             <div className="name">
                                 <h3>{items.title}</h3>
                             </div>
+                            <hr />
                             <div className="price">
                                 {items.price}
                             </div>

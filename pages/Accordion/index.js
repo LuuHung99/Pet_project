@@ -31,20 +31,24 @@ const listQuestion = [
 
 function Accoring(props) {
   const [data, setData] = useState(listQuestion);
+  const [showData, setShowData] = useState('');
 
   function showQuestion(id) {
-    // const newData = [...data];
-    // setData(newData);
+    // console.log(setShowData('infor'));
+    setShowData('infor');
     console.log(id);
+    
   }
 
-  function hideQuestion(id) {
+  const  hideQuestion =(id) => {
     console.log(id);
   }
 
     return (
         <div>
-          {data.map (e=> <Accordion items={e} showQuestion={showQuestion} hideQuestion={hideQuestion}/>)}  
+          {data.map ((e)=> {
+            if(e.infor !== showData || showData === '')
+              return <Accordion items={e} showQuestion={showQuestion} hideQuestion={hideQuestion}/>})}  
         </div>
     );
 }

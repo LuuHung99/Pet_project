@@ -1,39 +1,33 @@
-import React, {useState} from 'react';
-import { Input, Space } from 'antd';
-import 'antd/dist/antd.css';
-
-const { Search } = Input;
+import React, { useState } from "react";
+import { Input, Button } from "antd";
+import "antd/dist/antd.css";
 
 function TodoItems(props) {
+  const [value, setValue] = useState("");
 
-    const  [value, setValue] = useState('');
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
 
-    const onChange = (event) => {
-        setValue(event.target.value);
-    }
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        setValue('');
-        props.onSubmit();
-    }
-
-    return (
-                <form className="grocery_input" onSubmit={onSubmit} onChange={onChange} >
-                    <Space direction="vertical">
-                        <Search
-                            placeholder="e.g. eggs"
-                            allowClear
-                            enterButton="Submit"
-                            size="large"
-                            value={value}
-                            
-                        />
-                    </Space>
-                    
-                </form>
-
-    );
+  return (
+    <div style={{display: 'flex', padding: '0 30px'}}>
+      <Input
+        type="text"
+        value={value}
+        placeholder="e.g. eggs"
+        onChange={onChange}
+      />
+      <Button
+        type="primary"
+        onClick={() => {
+          props.onClick(value);
+          setValue("");
+        }}
+      >
+        Submit
+      </Button>
+    </div>
+  );
 }
 
 export default TodoItems;

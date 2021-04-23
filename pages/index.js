@@ -39,6 +39,11 @@ function HomePage() {
           </Link>
         </li>
         <li>
+          <Link href="/Reviews">
+            <a>Reviews</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/Navbar">
             <a>Navbar</a>
           </Link>
@@ -51,6 +56,21 @@ function HomePage() {
         <li>
           <Link href="/SideBarModel">
             <a>Slide Bar Model</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Login">
+            <a>Login</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Register">
+            <a>Register</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Lorem">
+            <a>Lorem</a>
           </Link>
         </li>
       </ul>

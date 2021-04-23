@@ -11,8 +11,13 @@ function ToursComplete(props) {
 
     // }
     const [ellipsis, setEllipsis] = useState(true);
-    const {item}= props
-    // console.log(props);
+    // const [showText, setShowText] = useState('Show less');
+    const {item}= props;
+
+    // const handleShowText = (id) => {
+    //     console.log(id);
+    // }
+  
     
     return (
         <>
@@ -34,16 +39,16 @@ function ToursComplete(props) {
                             ellipsis={
                             ellipsis
                                 ? {
-                                    rows: 1,
+                                    // rows: 1,
                                     expandable: true,
-                                    symbol: 'more',
+                                    symbol: 'Read more',
                                     // onExpand: setEllipsis(true)
-                                    
                                 }
-                                : false
+                                : {
+                                }
                             }
+                            onClick={() => props.changeText(item.id)}
                         >
-                           {!ellipsis?<button onClick={setEllipsis(false)}>hide</button>:null} 
                             {item.text}
                         </Paragraph>
                     </div>

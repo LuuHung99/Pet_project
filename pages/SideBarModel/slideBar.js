@@ -29,11 +29,7 @@ function SlideBar(props) {
                     </div>
                 </div>
                 <div className="sidebar__list">
-                    <ul>
-                        <li><BankTwoTone /><p>Home</p></li>
-                        <li><ContactsTwoTone /><p>Team</p></li>
-                        <li><FolderOpenTwoTone /><p>Project</p></li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>

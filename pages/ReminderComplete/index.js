@@ -29,22 +29,18 @@ const InitTodo = [
         name: "Lola Gardner", 
         old: "29 years"
     },
-    {
-        url: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg", 
-        name: "Lola Gardner", 
-        old: "29 years"
-    },
-    
 ];
 
 function TodoList() {
 
     // console.log(InitTodo);
     const [data, setData] = useState(InitTodo);
+    const [index, setIndex] = useState(5);
   
     function DeleteAll () {
       
-        const newList = data.filter(e=> {});
+        const newList = data.filter(e=> {console.log(e);});
+        setIndex(0);
         setData(newList);
         
     }
@@ -52,14 +48,15 @@ function TodoList() {
     return (
             <div className="reminder ">
                 <div >
-                    <div className="reminder__person" style={{paddingTop: '20px', paddingLeft: '30px', paddingBottom: '60px', marginTop: '60px'}} >
-                            <h2>5 birthdays today</h2>
+                    <div className="reminder__person" >
+                            <h2>{index} birthdays today</h2>
                         <div className="reminder__block">
                             <div>
                                 {
                                     data.map(e=> <DetailReminder item={e} key={e}/>)
                                 }
                                 <Button 
+                                    style={{backgroundColor: ''}}
                                     type="primary" block 
                                     style={{width: '92%'}}
                                     onClick={() =>DeleteAll()}
@@ -74,8 +71,5 @@ function TodoList() {
             </div>
     );
 }
-
-
-
 
 export default TodoList;

@@ -1,21 +1,19 @@
-import React from 'react';
-// import TodoForm from './todoForm';
-import TodoList from './todoList';
-// import ClearAllItem from './clearAllItem';
-
+import React from "react";
+import TodoList from "./todoList";
 
 function Grocery_Bug(props) {
-
-    return (
-            <div className="grocery_container">
-                <div className="grocery_title">
-                    <h1>Grocery Bug</h1>
-                </div>
-                {/* <TodoForm /> */}
-                <TodoList />
-                {/* <ClearAllItem /> */}
-            </div>
-    );
+  return (
+    <div>
+      <div className="grocery_container">
+        <div className="grocery_title">
+          <h1 color="red">Grocery Bug</h1>
+        </div>
+        {/* <TodoForm /> */}
+        <TodoList />
+        {/* <ClearAllItem /> */}
+      </div>
+    </div>
+  );
 }
 
 export default Grocery_Bug;

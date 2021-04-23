@@ -2,11 +2,14 @@
 .tour {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 8px 20px 0 rgb(0 0 0 / 19%);
     margin-bottom: 50px;
+    
 
 }
 .tour__infor {
     display: flex;
-    margin: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
 }
 
 .tour__title {
@@ -16,18 +19,27 @@
 }
 
 .tour__price {
-    display: flex;
-	float: left;
+    font-weight: bold;
+    color: #49a6e9;
+    background-color: #ebf7ff;
+    font-size: 18px;
+    padding: 0px 5px;
 }
 
 .tour__text {
-    margin: 30px;
+    margin: 2rem;
     font-size:  15px;
 }
 
 .tour__button {
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: red;
     padding-bottom: 20px;
+    line-height: 1.5;
+    font-size: 18px;
+    cursor: pointer;
+    border-color: red;
 }

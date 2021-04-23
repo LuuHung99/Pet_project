@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import ReviewsComplete from "./ReviewsComplete";
-import { CheckCircleTwoTone } from "@ant-design/icons";
+import React, { useState, useEffect } from "react";
+import DetailReview from "./reviews";
+import { makeStyles } from "@material-ui/core/styles";
 const listReivews = [
   {
     id: 1,
@@ -40,68 +40,68 @@ const listReivews = [
   },
 ];
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    margin: "0 auto",
+    marginTop: theme.spacing(10),
+    padding: "0 350px",
+    textAlign: "center",
+    fontSize: "20px",
+    // backgroundColor: '#f1f5f8'
+  },
+  title: {
+    fontSize: "40px",
+    fontWeight: "bold",
+    color: "#324d67",
+    paddingBottom: "40px",
+  },
+}));
+
 function Reviews(props) {
   const [data, setData] = useState(listReivews);
-  const [showView, setShowView] = useState(1);
+  const [showList, setShowList] = useState(1);
+  const classes = useStyles();
+  useEffect(() => {
+    setTimeout(() => {
+      if (props.index > 0) {
+        const resetAuto = showList === props.index;
+        const indexs = resetAuto ? showList + 1 : setShowList(1);
+        setShowList(indexs);
+      }
+    }, 2000);
+  }, [props]);
 
-  const nextLeft = (index) => {
+  const showLeft = (index) => {
     const nextpre = (index = index - 1);
     if (index > 0 && index < 5) {
-      setShowView(nextpre);
-    } 
-    else {
-      setShowView(4);
+      setShowList(nextpre);
+    } else {
+      setShowList(4);
     }
-
     console.log(index);
   };
 
-  const nextRight = (index) => {
+  const showRight = (index) => {
     const nextdcre = (index = index + 1);
     if (index > 0 && index < 5) {
-      setShowView(nextdcre);
-    } 
-    else {
-      setShowView(1);
+      setShowList(nextdcre);
+    } else {
+      setShowList(1);
     }
-
     console.log(index);
-  };
-
-  const randomNext = Math.ceil(Math.random() * 4);
-
-  const handleShowNext = () => {
-    setShowView(randomNext);
   };
 
   return (
-    <div>
-      <h1 style={{ textAlign: "center", paddingTop: "70px", fontSize: "40px" }}>
-        <b>Our Reviews</b>
-      </h1>
-      <hr
-        style={{ width: "130px", height: "5px", backgroundColor: "#49a6e9" }}
-      ></hr>
-      <div
-        style={{
-          position: "absolute",
-          right: "800px",
-          fontSize: "250%",
-          top: "200px",
-          zIndex: "1",
-        }}
-      >
-        <CheckCircleTwoTone />
-      </div>
+    <div className={classes.container}>
+      <div className={classes.title}>/ Reviews</div>
       {data.map((e) => {
-        if (e.id === showView)
+        if (e.id == showList)
           return (
-            <ReviewsComplete
+            <DetailReview
               items={e}
               key={e}
-              showNext={handleShowNext}
-              nextLeft={nextLeft}
-              nextRight={nextRight}
+              showLeft={showLeft}
+              showRight={showRight}
             />
           );
       })}

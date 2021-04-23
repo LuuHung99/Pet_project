@@ -1,5 +1,5 @@
-import React from 'react';
-import ListNav from './listNav';
+import React from "react";
+import ListNav from "./listNav";
 // import {
 //     BrowserRouter as Router,
 //     Switch,
@@ -8,13 +8,11 @@ import ListNav from './listNav';
 //   } from "react-router-dom";
 
 function Navbar(props) {
-    return (
-            <div>
-                
-                    <ListNav />
-              
-            </div>
-    );
+  return (
+    <div>
+      <ListNav />
+    </div>
+  );
 }
 
 export default Navbar;

@@ -7,16 +7,20 @@ function TodoItems(props) {
 
   const onChange = (event) => {
     setValue(event.target.value);
-  };
+    
+  }
+
+  console.log(props.isUpdate);
 
   return (
-    <div style={{display: 'flex', padding: '0 30px'}}>
+    <div style={{ display: "flex", padding: "0 30px" }}>
       <Input
         type="text"
         value={value}
         placeholder="e.g. eggs"
         onChange={onChange}
       />
+
       <Button
         type="primary"
         onClick={() => {

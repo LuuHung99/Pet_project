@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ToursComplete from "./ToursComplete";
-import { Button } from 'antd';
+import { Button } from "antd";
 
 const listTours = [
   {
@@ -53,7 +53,9 @@ const listTours = [
 function ListTour() {
   const [data, setData] = useState(listTours);
   const [text, setText] = useState("Our Tours");
-//   const [changeTexts, setChangeTexts] = useState("text");
+  const [showList, setShowList] = useState(true);
+  // const [showText, s]
+  //   const [changeTexts, setChangeTexts] = useState("text");
 
   function deleteItems(selected) {
     // alert('Delete successfully')
@@ -62,37 +64,49 @@ function ListTour() {
     });
 
     setData(newList);
-    if(newList.length < 1) {
-        setText( "No Tours Left")
-      }
-    if(newList.length < 1) {
+
+    if (newList.length < 1) {
+      // setText("No Tours Left");
+      setShowList();
+      // console.log(showList);
     }
   }
 
-  // function changeText(e) {
-  //     return e.text + "less";
-  // }
+  const Refresh = () => {
+    setShowList(true);
+    console.log(showList);
+  };
 
   return (
-    <div className="wrapper">
-      <h1
-        style={{
-          textAlign: "center",
-          marginTop: "40px",
-          fontWeight: "bold",
-          fontSize: "40px",
-        }}
-      >
-        {text}
-      </h1>
-      {data.map((e) => (
-        <ToursComplete
-          item={e}
-          key={e}
-          deleteItems={deleteItems}
-          // changeText={changeText}
-        />
-      ))}
+    <div>
+      {showList ? (
+        <div className="wrapper">
+          <h1
+            style={{
+              textAlign: "center",
+              marginTop: "40px",
+              fontWeight: "bold",
+              fontSize: "40px",
+            }}
+          >
+            {text}
+          </h1>
+          {data.map((e) => (
+            <ToursComplete
+              item={e}
+              key={e}
+              deleteItems={deleteItems}
+              // changeText={changeText}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>
+          <Button type="primary" onClick={Refresh} style={{ margin: "0 auto" }}>
+            Refresh
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Accordion from "./Accordion";
+import { Row, Col } from "antd";
+import "antd/dist/antd.css";
+import { PlusOutlined, MinusOutlined } from "@ant-design/icons";
 
 const listQuestion = [
   {
@@ -36,30 +38,56 @@ const listQuestion = [
 
 function Accoring(props) {
   const [data, setData] = useState(listQuestion);
-  const [showData, setShowData] = useState("");
+  const [showData, setShowData] = useState(true);
+  // const [icon, setIcon] = useState(true);
 
   const showQuestion = (id) => {
-      console.log(id);
-  }
+    console.log(id);
+    setShowData(false);
+  };
 
   const hideQuestion = (id) => {
     console.log(id);
+    setShowData(true);
   };
 
   return (
     <div className="container__accordion">
       <div className="row_accordion">
-        <h2>Questions And Answers About Login</h2>
-        {data.map((e) => {
-          if (e.infor !== showData || showData == '')
-            return (
-              <Accordion
-                items={e}
-                showQuestion={showQuestion}
-                hideQuestion={hideQuestion}
-              />
-            );
-        })}
+        {/* <h2>Questions And Answers About Login</h2>   */}
+        {data.map((e) => (
+          <Row>
+            <Col span={15} offset={6} className="infor">
+              {showData  ? (
+                <div className="question">
+                  <h3>{e.title}</h3>
+
+                  {/* <p>{e.infor}</p> */}
+                  <div className="icon">
+                    <PlusOutlined onClick={() => showQuestion(e.id)} />
+                    {/* <MinusOutlined
+                      className=""
+                      onClick={() => hideQuestion(e.id)}
+                    /> */}
+                  </div>
+                </div>
+              ) : (
+                <div className="question">
+                  <h3>{e.title}</h3>
+
+                  <p>{e.infor}</p>
+                  <div className="icon">
+                    {/* <PlusOutlined onClick={() => showQuestion(e.id)} /> */}
+                    <MinusOutlined
+                      className=""
+                      onClick={() => hideQuestion(e.id)}
+                    />
+                  </div>
+                </div>
+              )}
+            </Col>
+          </Row>
+        ))}
       </div>
     </div>
   );

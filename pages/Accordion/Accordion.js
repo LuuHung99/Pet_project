@@ -12,11 +12,17 @@ function Accordion(props) {
                 <Col span={12} offset={6} className="infor">
                     <div className="question">
                         <h3>{items.title}</h3>
+                        
+                        <p>{items.infor}</p>
                         <div className="icon">
                             <PlusOutlined onClick={()=> props.showQuestion(items.id)}/>
-                            <MinusOutlined className="icon_hide" onClick={()=> props.hideQuestion(items.id)}/>
+                            <MinusOutlined className="" onClick={()=> props.hideQuestion(items.id)}/>
                         </div>
+                        
+                        
+                        
                     </div>
+                    
                 </Col>
              </Row>
         </>

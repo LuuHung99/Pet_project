@@ -5,6 +5,7 @@ import {
   LeftCircleTwoTone,
   RightCircleTwoTone,
 } from "@ant-design/icons";
+
 const useStyles = makeStyles((theme) => ({
   img: {
     width: "150px",
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   icons: {
+    paddingLeft: '60px',
     fontSize: "160%",
     fontWeight: "bold",
     color: "#49a6e9",
@@ -41,12 +43,12 @@ const useStyles = makeStyles((theme) => ({
   },
   iconLeft: {
     position: "absolute",
-    left: "300px",
+    left: "350px",
     top: "370px",
   },
   iconRight: {
     position: "absolute",
-    right: "300px",
+    right: "350px",
     top: "370px",
   },
   iconsBottom: {

@@ -8,9 +8,7 @@ function Grocery_Bug(props) {
         <div className="grocery_title">
           <h1 color="red">Grocery Bug</h1>
         </div>
-        {/* <TodoForm /> */}
         <TodoList />
-        {/* <ClearAllItem /> */}
       </div>
     </div>
   );

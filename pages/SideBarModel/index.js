@@ -1,13 +1,15 @@
 import React from 'react';
 import Model from './model';
 import SideBar from './slideBar';
+import DetailSlideBar from './detailSlideBar';
 
 function SlideBarModel(props) {
     return (
-        <div className="side_container">
+        <>
             <SideBar />
             <Model />
-        </div>
+            {/* <DetailSlideBar /> */}
+        </>
     );
 }
 

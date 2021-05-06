@@ -27,10 +27,10 @@ const listReivews = [
     name: "Peter Jones",
     direction: "WINTERN",
     text:
-      "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
+      "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag artisan narwhal.",
   },
   {
-    id: 4,
+    id: 4,  
     url:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
     name: "Bill Anderson",
@@ -57,7 +57,7 @@ function Reviews(props) {
   };
 
   const nextRight = (index) => {
-    const nextdcre = (index = index + 1);
+    const nextdcre = (index = index + 1 );
     if (index > 0 && index < 5) {
       setShowView(nextdcre);
     } 
@@ -68,10 +68,19 @@ function Reviews(props) {
     console.log(index);
   };
 
-  const randomNext = Math.ceil(Math.random() * 4);
+  // const randomNext = Math.ceil(Math.random() * 4);
 
-  const handleShowNext = () => {
-    setShowView(randomNext);
+  const handleShowNext = (index) => {
+    // setShowView(randomNext);
+    const nextdcre = (index = index + 1);
+    if (index > 0 && index < 5) {
+      setShowView(nextdcre);
+    } 
+    else {
+      setShowView(1);
+    }
+
+    console.log(index);
   };
 
   return (

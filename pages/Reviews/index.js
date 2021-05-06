@@ -61,15 +61,15 @@ function Reviews(props) {
   const [data, setData] = useState(listReivews);
   const [showList, setShowList] = useState(1);
   const classes = useStyles();
-  useEffect(() => {
-    setTimeout(() => {
-      if (props.index > 0) {
-        const resetAuto = showList === props.index;
-        const indexs = resetAuto ? showList + 1 : setShowList(1);
-        setShowList(indexs);
-      }
-    }, 2000);
-  }, [props]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if (props.index > 0) {
+  //       const resetAuto = showList === props.index;
+  //       const indexs = resetAuto ? showList + 1 : setShowList(1);
+  //       setShowList(indexs);
+  //     }
+  //   }, 2000);
+  // }, [props]);
 
   const showLeft = (index) => {
     const nextpre = (index = index - 1);
@@ -94,12 +94,12 @@ function Reviews(props) {
   return (
     <div className={classes.container}>
       <div className={classes.title}>/ Reviews</div>
-      {data.map((e) => {
+      {data.map((e, index) => {
         if (e.id == showList)
           return (
             <DetailReview
               items={e}
-              key={e}
+              key={index}
               showLeft={showLeft}
               showRight={showRight}
             />

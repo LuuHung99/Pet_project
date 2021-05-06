@@ -7,6 +7,7 @@ import '../styles/Tabs.css';
 import '../styles/Navbar.css';
 import '../styles/Grocery_Bug.css';
 import '../styles/SideBarModel.css';
+import '../styles/StripeMenu.css';
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

@@ -73,6 +73,29 @@ function HomePage() {
             <a>Lorem</a>
           </Link>
         </li>
+        <li>
+          <Link href="/StripeMenu">
+            <a>StripeMenu</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Cart">
+            <a>Cart</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/Cocktails">
+            <a>Cocktails</a>
+          </Link>
+        </li>
+        <hr />
+        <li>
+          <Link href="/DarkMode">
+            <a>DarkMode</a>
+          </Link>
+        </li>
+        
+        
       </ul>
     </div>
   )

@@ -1,6 +1,10 @@
 import React from "react";
 import { Row, Col, Button } from "antd";
 import "antd/dist/antd.css";
+import {
+  Link,
+} from "react-router-dom";
+
 
 function listCockTails(props) {
   const { item } = props;
@@ -15,7 +19,7 @@ function listCockTails(props) {
             <div style={{letterSpacing: '4px', fontWeight: 'bold', fontSize: '18px'}}>{item.glass}</div>
             <div style={{marginTop: '10px', opacity: '0.5'}}>{item.info}</div>
             <div style={{marginTop: '15px', }}>
-                <Button type="primary" style={{letterSpacing: '3px'}} onClick={() =>props.handleClick(item.id)}>Details</Button>
+                <Link type="primary" style={{letterSpacing: '3px'}}  to={"/detail/"+item.id} >Details</Link>
             </div>
           </div>
       </Col>

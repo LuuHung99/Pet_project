@@ -9,11 +9,6 @@
 .grocery_title {
     text-align: center;
 }
-input.ant-input.ant-input-lg {
-    width: 400px;
-
-    
-}
 
 .grocery_input {
     padding: 20px;
@@ -21,7 +16,7 @@ input.ant-input.ant-input-lg {
 
 .grocery_items {
     margin: 20px;
-    width: 525px;
+    width: 500px;
     height: 30px;
     display: flex;
     align-items: center;

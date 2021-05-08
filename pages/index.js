@@ -94,7 +94,17 @@ function HomePage() {
             <a>DarkMode</a>
           </Link>
         </li>
-        
+        <li>
+          <Link href="/Hook">
+            <a>HookUser</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/movies">
+            <a>Movies</a>
+          </Link>
+        </li>
+      
         
       </ul>
     </div>

@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./about";
 import Home from "./home";
-import Details from './detailCock';
+import Details from './detail';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -45,7 +45,7 @@ function Cocktails(props) {
             The<b style={{ color: "green" }}>Cocktail</b>DB
           </Col>
           <Col span={8} offset={8} className={classes.menu}>
-            <Link to="/">
+            <Link to="/home">
               <a>Home</a>
             </Link>
             <Link to="/about">
@@ -56,9 +56,9 @@ function Cocktails(props) {
         <hr className={classes.hrs} />
       </div>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route  path="/home" component={Home} />
         <Route path="/about" component={About} />
-        <Route path='/detail'/>
+        <Route path='/detail' component={Details} />
       </Switch>
 
     </Router>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TodoForm from "./todoForm";
 import TodoItems from "./todoItems";
 import ClearAllItem from "./clearAllItem";
-
+import { v4 as uuidv4 } from 'uuid'
 
 const listItems = [
   {
@@ -26,43 +26,29 @@ function TodoList(props) {
   const [edit, setEdit] = useState(true);
 
   const deleteAllItems = () => {
-    const newList = listTodo.filter((e) => {
-      console.log(e);
-    });
+    const newList = listTodo.filter((e) => {});
     setListTodo(newList);
   };
 
   const handleAddTodo = (val) => {
     console.log(val);
-    const newTodo = {
-      id: listTodo.length + 1,
-      title: val,
-    };
-
-    const newTodoList = listTodo.concat(newTodo);
-    // console.log(newTodoList);
-    setListTodo(newTodoList);
+    if(val.length > 0) {
+      const newTodo = {
+        id: uuidv4(),
+        title: val,
+      };
+  
+      const newTodoList = listTodo.concat(newTodo);
+      // console.log(newTodoList);
+      setListTodo(newTodoList);
+    }
+    
   };
 
   const removeTodo = (selected) => {
     const removeList = listTodo.filter((e) => {
       if (e.id !== selected) return e;
-      // && (
-      //   <div>
-      //     <h4
-      //       style={{
-      //         width: "auto",
-      //         height: "30px",
-      //         backgroundColor: "yellow",
-      //         color: "red",
-      //         top: "2px",
-      //         textAlign: "center",
-      //       }}
-      //     >
-      //       Delete items successfully
-      //     </h4>
-      //   </div>
-      // )
+      
     });
     setListTodo(removeList);
   };

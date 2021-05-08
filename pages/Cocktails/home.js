@@ -4,7 +4,7 @@ import { Row, Col } from "antd";
 import "antd/dist/antd.css";
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import ListCockTails from "./listCockTails";
-import Details from './detailCock';
+import SearchField from 'react-search-field';
 
 const apiCocktail = [
     {
@@ -126,18 +126,14 @@ function HomePage(props) {
   const [isSuccess, setIsSuccess] = useState(true);
 
 
-  const handleShowDetail = (e) => {
+  // const handleShowDetail = (id) => {
+  //   setIsSuccess(false);
     
-      setIsSuccess(false);
-    
-    // {data.map((e,idx)=> {
-   
-    //   return <Redirect to='detail' component={<Details item={e} key={idx} />}/>
-    // })}
-  }
+
+  // }
   return (
     <div>
-      {isSuccess ? (<div className={classes.container}>
+      <div className={classes.container}>
         <Row className={classes.searchBar}>
           <Col>
             <div className={classes.title_search}>Search Your Favorite Cocktail</div>
@@ -146,12 +142,11 @@ function HomePage(props) {
         </Row>
         <div style={{textAlign: "center", fontSize: '20px', fontWeight: "bold", marginTop: '40px'}}><h1>Cocktails</h1></div>
         <div className={classes.listCockTails}>
-            {data.map((e, idx) => <ListCockTails item={e} key={idx} handleClick={() =>handleShowDetail(e.id)} />)}
+            {data.map((e, idx) => <ListCockTails item={e} key={idx}  />)}
         </div>
-      </div>) : (data.map((e, idx) => <Redirect to='detail' component={<Details item={e} key={idx} />} />))}
+      </div>
       </div>
       
-     
   );
 }
 

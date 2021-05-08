@@ -10,7 +10,6 @@ function TodoItems(props) {
     
   }
 
-  console.log(props.isUpdate);
 
   return (
     <div style={{ display: "flex", padding: "0 30px" }}>

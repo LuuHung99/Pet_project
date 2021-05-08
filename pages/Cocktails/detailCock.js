@@ -27,44 +27,47 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function DetailPage(props) {
-  const {item} = props;
+  const {name, images, info, category, glass, instruction, ingredients} = props.item;
   const classes = useStyles();
   return (
+    <Router>
     <div className={classes.container}>
       <div className={classes.title}>
-        <Button type="primary" className={classes.button_detail}>
+        <Link to="/home"><Button type="primary" className={classes.button_detail}>
           BACK HOME
-        </Button>
-        <h1 style={{ paddingTop: "20px" }}>GG</h1>
+        </Button></Link>
+        <h1 style={{ paddingTop: "20px" }}>{name}</h1>
       </div>
       <Row style={{ padding: '0 100px'}}>
         <Col span={8}>
-          <img style={{width: '100%', height: '100%'}} src="https://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg" />
+          <img style={{width: '100%', height: '100%'}} src={images} />
         </Col>
         <Col style={{paddingLeft: '50px', paddingTop: '50px'}} span={16}>
           <div className={classes.infor}>
             <p>
-              <span>Name: </span> {item.name}
+              <span>Name: </span> {name}
             </p>
             <p>
-              <span>Category: </span> {item.category}
+              <span>Category: </span> {category}
             </p>
             <p>
-              <span>Info: </span> {item.info}
+              <span>Info: </span> {info}
             </p>
             <p>
-              <span>Glass: </span> {item.glass}
+              <span>Glass: </span> {glass}
             </p>
             <p>
-              <span>Instructons: </span> {item.instructons}
+              <span>Instructons: </span> {instruction}
             </p>
             <p>
-              <span>Ingredients: </span> {item.ingredients}
+              <span>Ingredients: </span> {ingredients}
             </p>
           </div>
         </Col>
       </Row>
     </div>
+      
+    </Router>
   );
 }
 

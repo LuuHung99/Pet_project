@@ -53,6 +53,7 @@ function HomeComponent(props) {
             total={totalItems}
             pageSize={20}
             onChange={(pages) => setPage(pages)}
+            style={{margin: '0px'}}
           />
         </Col>
       </Row>

@@ -42,7 +42,7 @@ export const loginApi = async (user, pass) => {
 
 export const saveTokenLocalStorage = async (token) => {
   if (token !== undefined && token !== null && token !== "") {
-    localstorage.setItem("token", JSON.stringify(token));
+    localStorage.setItem("token", JSON.stringify(token));
     //localstorage.setItem: chi luu duoi dang string
     // stringify: ep tu object ve dang string
   }

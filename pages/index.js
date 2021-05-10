@@ -104,7 +104,26 @@ function HomePage() {
             <a>Movies</a>
           </Link>
         </li>
-      
+        <li>
+          <Link href="/redux">
+            <a>Redux</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/redux-v2">
+            <a>Redux-v2</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/weather">
+            <a>Weather</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/searchFilm-saga">
+            <a>SearchFilm-saga</a>
+          </Link>
+        </li>
         
       </ul>
     </div>

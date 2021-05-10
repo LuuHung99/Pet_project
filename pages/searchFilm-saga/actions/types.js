@@ -1,0 +1,8 @@
+//Action cua users
+export const GET_DATA_MOVIES = 'GET_DATA_MOVIES';
+
+//Aciton cua saga 
+export const START_DATA_MOVIES = 'START_DATA_MOVIES';
+export const STOP_DATA_MOVIES = 'STOP_DATA_MOVIES';
+export const SEARCH_DATA_MOVIES_SUCCESS = 'SEARCH_DATA_MOVIES_SUCCESS';
+export const SEARCH_DATA_MOVIES_FAIL = 'SEARCH_DATA_MOVIES_FAIL';

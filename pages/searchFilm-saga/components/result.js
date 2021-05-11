@@ -1,11 +1,14 @@
-import React from "react";
-import { Row, Col, Skeleton, Card } from "antd";
+import React, {useState} from "react";
+import { Row, Col, Skeleton, Card, Pagination } from "antd";
 import { useSelector } from "react-redux";
 const { Meta } = Card;
 
 function ResultWeather(props) {
   const loading = useSelector((state) => state.searchMovie.loading);
   const movies = useSelector((state) => state.searchMovie.dataMovies);
+
+
+
 
   if (loading) {
     return (
@@ -18,7 +21,7 @@ function ResultWeather(props) {
   }
   return (
     <>
-      <Row style={{ padding: "40px" }}>
+      <Row style={{ padding: "40px" }} >
         {movies.hasOwnProperty("results") ? (
           movies.results.map((item, index) => (
             <Col span={4} key={index}>
@@ -39,6 +42,7 @@ function ResultWeather(props) {
           ))
         ) : null}
       </Row>
+      
     </>
   );
 }

@@ -37,9 +37,9 @@ function TodoList() {
     const [data, setData] = useState(InitTodo);
     const [index, setIndex] = useState(5);
   
-    function DeleteAll () {
-      
-        const newList = data.filter(e=> {console.log(e);});
+    function DeleteAll (check) {
+      console.log(check);
+        const newList = data.filter(e=> {e.id !== check});
         setIndex(0);
         setData(newList);
         

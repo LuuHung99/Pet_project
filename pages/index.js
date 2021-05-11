@@ -100,6 +100,11 @@ function HomePage() {
           </Link>
         </li>
         <li>
+          <Link href="/UseReducer">
+            <a>UseReducer</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/movies">
             <a>Movies</a>
           </Link>
@@ -107,6 +112,11 @@ function HomePage() {
         <li>
           <Link href="/redux">
             <a>Redux</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/ReduxCounter">
+            <a>ReduxCounter</a>
           </Link>
         </li>
         <li>
@@ -122,6 +132,11 @@ function HomePage() {
         <li>
           <Link href="/searchFilm-saga">
             <a>SearchFilm-saga</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/PaginationUser">
+            <a>PaginationUser</a>
           </Link>
         </li>
         

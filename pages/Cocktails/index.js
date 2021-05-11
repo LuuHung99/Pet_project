@@ -1,11 +1,15 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Row, Col } from "antd";
+import { Row, Col, Skeleton } from "antd";
 import "antd/dist/antd.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import About from "./about";
-import Home from "./home";
-import Details from './detail';
+// import About from "./about";
+// import Home from "./about";
+// import Details from './detail';
+
+const About = lazy(() => import("./about"));
+const Home = lazy(() => import("./home"));
+const Details = lazy(() => import("./detail"));
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -55,12 +59,13 @@ function Cocktails(props) {
         </Row>
         <hr className={classes.hrs} />
       </div>
-      <Switch>
-        <Route  path="/home" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path='/detail' component={Details} />
-      </Switch>
-
+      <Suspense fallback={<Skeleton active />}>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/detail" component={Details} />
+        </Switch>
+      </Suspense>
     </Router>
   );
 }

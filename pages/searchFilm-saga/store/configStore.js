@@ -17,7 +17,7 @@ const configStore = (loadState = {}) => {
     )
   );
   sagaMiddleware.run(rootSaga);
-  return { store };
+  return { store};
 };
 
 export default configStore;

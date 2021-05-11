@@ -82,6 +82,8 @@ function index(props) {
     setData(changeData);
     setShowTotal(true);
     setTitle(false);
+    setNumber(0);
+    setTotal(0);
   };
 
   const deleteItems = (id) => {
@@ -194,7 +196,7 @@ function index(props) {
                 position: "absolute",
                 top: ".85rem",
                 left: ".85rem",
-                marginLeft: "70.5rem",
+                marginLeft: "66rem",
                 marginTop: "-.45rem",
                 width: "1.75rem",
                 height: "1.75rem",
@@ -224,7 +226,7 @@ function index(props) {
           </Row>
           {data.map((e, index) =>
             e.status ? (
-              <Row style={{ paddingBottom: "20px" }}>
+              <Row style={{ paddingBottom: "20px" }} key={index}>
                 <Col
                   span={12}
                   offset={6}

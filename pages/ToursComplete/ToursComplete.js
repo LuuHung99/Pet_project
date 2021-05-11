@@ -17,8 +17,8 @@ function ToursComplete(props) {
   //     console.log(id);
   // }
 
-  const changeText = () => {
-    
+  const showLess = () => {
+    setEllipsis(false);
   } 
 
   return (
@@ -47,11 +47,11 @@ function ToursComplete(props) {
                       // onExpand: setEllipsis(true)
                     }
                   : {
-                      // expandable: false,
-                      // symbol: "Show less",
-                    }
+                      expandable: false,
+                      symbol: "Show less",
+                      onExpand: setEllipsis(false)
+                                        }
               }
-              onClick={changeText}
             >
               {item.text}
             </Paragraph>

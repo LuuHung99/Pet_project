@@ -97,6 +97,7 @@ function Reviews(props) {
           right: "800px",
           fontSize: "250%",
           top: "200px",
+          left: "630px",
           zIndex: "1",
         }}
       >

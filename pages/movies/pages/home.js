@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Pagination } from "antd";
-import { Link } from "react-router-dom";
-import slugify  from 'react-slugify';
 import LayoutPage from "../components/layout";
 const { Meta } = Card;
 

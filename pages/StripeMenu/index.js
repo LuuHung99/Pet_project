@@ -2,15 +2,17 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Row, Col, Button } from "antd";
 import { FileProtectOutlined } from "@ant-design/icons";
+import Detail from "./detailProduct";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 function index(props) {
   return (
-    <div>
-      <div style={{ position: "absolute" }}>
+    <Router>
+      <div style={{ position: "absolute" }} className="container_menu">
         <div>
           <img
             src="s1.svg"
-            style={{ width: "114%", height: "500px", zIndex: "1" }}
+            style={{ width: "106.8%", height: "500px", zIndex: "1" }}
           />
         </div>
         <div>
@@ -55,25 +57,24 @@ function index(props) {
                 fontSize: "20px",
                 cursor: "pointer",
               }}
-              
             >
               <li className="dropdown1">
                 Product
                 <div className="dropdown-content1">
                   <p>Product</p>
                   <div className="dropdown-detail1">
-                    <div>
+                    <Link to="/detail">
                       <FileProtectOutlined />
                       Payment
-                    </div>
-                    <div>
+                    </Link>
+                    <Link>
                       <FileProtectOutlined />
                       Payment
-                    </div>
-                    <div>
+                    </Link>
+                    <Link>
                       <FileProtectOutlined />
                       Payment
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -82,22 +83,22 @@ function index(props) {
                 <div className="dropdown-content2">
                   <p>Developer</p>
                   <div className="dropdown-detail2">
-                    <div>
+                    <Link>
                       <FileProtectOutlined />
                       Plugin
-                    </div>
-                    <div>
+                    </Link>
+                    <Link>
                       <FileProtectOutlined />
                       Libraries
-                    </div>
-                    <div>
+                    </Link>
+                    <Link>
                       <FileProtectOutlined />
                       Helpers
-                    </div>
-                    <div>
+                    </Link>
+                    <Link>
                       <FileProtectOutlined />
                       Billing
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -106,14 +107,14 @@ function index(props) {
                 <div className="dropdown-content3">
                   <p>Company</p>
                   <div className="dropdown-detail3">
-                    <div>
+                    <Link>
                       <FileProtectOutlined />
                       About
-                    </div>
-                    <div>
+                    </Link>
+                    <Link>
                       <FileProtectOutlined />
                       Customer
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -124,6 +125,12 @@ function index(props) {
           </Col>
         </Row>
       </div>
+      <Switch>
+        <Route exact path="/detail">
+          <Detail />
+        </Route>
+
+      </Switch>
       <div style={{ padding: "0 120px", marginTop: "80px" }}>
         <Row>
           <Col span={14}>
@@ -150,7 +157,7 @@ function index(props) {
           </Col>
         </Row>
       </div>
-    </div>
+    </Router>
   );
 }
 

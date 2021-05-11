@@ -1,9 +1,9 @@
 import React from "react";
 import AppMovies from "./pages/movie";
 import { Provider } from "react-redux";
-import configStore from "./store/index";
+import configStore from "./store/configStore";
 
-const {store} = configStore({});
+const { store } = configStore({});
 
 function SearchFilm(props) {
   return (

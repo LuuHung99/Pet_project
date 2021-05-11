@@ -66,15 +66,14 @@ function ListTour() {
     setData(newList);
 
     if (newList.length < 1) {
-      // setText("No Tours Left");
-      setShowList();
+      setShowList(false);
       // console.log(showList);
     }
   }
 
   const Refresh = () => {
     setShowList(true);
-    console.log(showList);
+    setData(listTours);
   };
 
   return (
@@ -91,10 +90,10 @@ function ListTour() {
           >
             {text}
           </h1>
-          {data.map((e) => (
+          {data.map((e ,index) => (
             <ToursComplete
               item={e}
-              key={e}
+              key={index}
               deleteItems={deleteItems}
               // changeText={changeText}
             />

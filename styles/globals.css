@@ -15,3 +15,12 @@ a {
   box-sizing: border-box;
 }
 
+.btn_showHide {
+  border: none;
+  color: green;
+  font-size: 16px;
+  background-color: #fff;
+  margin-left: 25px;
+
+}
+

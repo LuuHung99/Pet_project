@@ -1,0 +1,7 @@
+//Action cua user
+export const GET_DATA_PERSON = 'GET_DATA_PERSON';
+
+//Action cua sagas
+export const LOADING_DATA_PERSON = 'LOADING_DATA_PERSON';
+export const GET_DATA_PERSON_SUCCESS = 'GET_DATA_PERSON_SUCCESS';
+export const GET_DATA_PERSON_FAIL = 'GET_DATA_PERSON_FAIL';

@@ -100,6 +100,11 @@ function HomePage() {
           </Link>
         </li>
         <li>
+          <Link href="/RandomPerson">
+            <a>RandomPerson</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/UseReducer">
             <a>UseReducer</a>
           </Link>

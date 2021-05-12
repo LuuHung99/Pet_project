@@ -46,32 +46,43 @@ function Reviews(props) {
 
   const nextLeft = (index) => {
     const nextpre = (index = index - 1);
-    if (index > 0 && index < 5) {
+    if (index > 0 && index < data.length + 1) {
       setShowView(nextpre);
     } 
     else {
       setShowView(4);
     }
 
-    console.log(index);
   };
 
   const nextRight = (index) => {
-    const nextdcre = (index = index + 1 );
-    if (index > 0 && index < 5) {
+    const nextdcre = (index = index + 1);
+    if (index > 0 && index < data.length + 1) {
       setShowView(nextdcre);
     } 
     else {
       setShowView(1);
     }
 
-    console.log(index);
   };
 
-  // const randomNext = Math.ceil(Math.random() * 4);
+  const checkNumber = (number) => {
+    if(number < 0) {
+      return data.length - 1;
+    } else if(number > data.length - 1) {
+      return 0
+    }
 
+  } 
   const handleShowNext = (index) => {
-    // setShowView(randomNext);
+    // const randomNext = Math.floor(Math.random() * data.length);
+    // console.log((randomNext));
+    // if(randomNext === data.id ) {
+    //  randomNext = data.id + 1;
+      
+    // }
+    // setShowView(checkNumber(randomNext));
+    
     const nextdcre = (index = index + 1);
     if (index > 0 && index < 5) {
       setShowView(nextdcre);

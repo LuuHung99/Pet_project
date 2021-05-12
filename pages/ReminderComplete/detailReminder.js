@@ -1,21 +1,26 @@
-import React from 'react';
+import React from "react";
 
-function detailReminder(props) {
-    const {item} = props
-
-    return (
-        <div>
-            <div className="person" >
-                <div className="person_img">
-                    <img className="img" src={item.url} alt=""/>
-                </div>
-                <div className="person__name">
-                    <h4><b>{item.name}</b></h4>
-                    <p>{item.old}</p>
-                </div>
+function detailReminder({people}) {
+  return (
+    <>
+      {people.map((person) => {
+        const { id, url, name, old } = person;
+        return (
+          <div className="person" key={id}>
+            <div className="person_img">
+              <img className="img" src={url} alt="" />
             </div>
-        </div>
-    );
+            <div className="person__name">
+              <h4>
+                <b>{name}</b>
+              </h4>
+              <p>{old}</p>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
 }
 
 export default detailReminder;

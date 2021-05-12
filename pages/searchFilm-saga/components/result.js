@@ -7,9 +7,6 @@ function ResultWeather(props) {
   const loading = useSelector((state) => state.searchMovie.loading);
   const movies = useSelector((state) => state.searchMovie.dataMovies);
 
-
-
-
   if (loading) {
     return (
       <Row style={{ padding: "10px" }}>

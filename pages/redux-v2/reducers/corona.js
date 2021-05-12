@@ -1,5 +1,4 @@
 import * as types from '../actions/type';
-// import {data} from '../services/index';
 
 const initialState = {
     loading: false,

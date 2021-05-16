@@ -14,22 +14,24 @@ function HomeComponent(props) {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const getData = async () => {
-      setLoadingHome(true);
-      const data = await getDataMovies(page);
-      if (data) {
-        setMovies(data.results);
-        setTotalItems(data.total_results);
-        if (page < 1) {
-          setPage(1);
-        } else if (page > data.total_pages) {
-          setPage(data.total_pages);
-        }
-        setLoadingHome(false);
-      }
-    };
+    
     getData();
   }, [page]);
+
+  const getData = async () => {
+    setLoadingHome(true);
+    const data = await getDataMovies(page);
+    if (data) {
+      setMovies(data.results);
+      setTotalItems(data.total_results);
+      if (page < 1) {
+        setPage(1);
+      } else if (page > data.total_pages) {
+        setPage(data.total_pages);
+      }
+      setLoadingHome(false);
+    }
+  };
 
   if (loadingHome || movies.length === 0) {
     return (

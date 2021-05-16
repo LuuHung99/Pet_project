@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Card } from "antd";
+import { Row, Col, Card, Button } from "antd";
 import { Link } from "react-router-dom";
 import slugify  from 'react-slugify'
 const { Meta } = Card;
@@ -22,6 +22,7 @@ function ListMovies(props) {
                 }
               >
                 <Meta title={item.title} />
+                
               </Card>
             </Link>
           </Col>

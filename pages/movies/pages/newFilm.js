@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Pagination } from "antd";
+import { Row, Col, Card, Pagination, Button, message } from "antd";
 import LayoutPage from "../components/layout";
-import { Link } from "react-router-dom";
-import slugify  from 'react-slugify';
 import { getDataMovies } from "../services/callApi";
 import LoadingData from "../components/loadingData";
 
@@ -40,6 +38,10 @@ function NewFilm(props) {
     );
   }
 
+  const info = () => {
+    message.info('Add to cart movies successfully', 1)
+  }
+
   return (
     <LayoutPage>
       <Row style={{ margin: "30px 0px" }}>
@@ -57,6 +59,7 @@ function NewFilm(props) {
             }
           >
             <Meta title={item.title}  />
+            <Button type="primary" style={{marginTop: '10px'}} onClick={info}>Add cart</Button>
           </Card>
           </Col>
         ))}

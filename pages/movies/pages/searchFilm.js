@@ -15,7 +15,7 @@ function SearchFilm(props) {
 
   const searchMovies = async (key = "", currentPage = 1) => {
     if (key.length > 0) {
-      setLoadingSearch(true);
+      setLoadingSearch(true); 
       const data = await getDataSearchFilm(key, currentPage);
       if (data) {
         setListMovies(data.results);
@@ -38,7 +38,7 @@ function SearchFilm(props) {
         <Col span={12} offset={6}>
           <Search
             placeholder="input search text"
-            onSearch={(val) => searchMovies(val, page)}
+            onSearch={(val) => searchMovies(val)}
             enterButton
             onChange={(event) => setKeywords(event.target.value)}
             value={keywords}

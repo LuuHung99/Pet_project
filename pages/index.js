@@ -1,8 +1,4 @@
 import Link from 'next/link'
-// import ReminderComplete from '../components/ReminderComplete/index'
-// import ToursComplete from '../components/ToursComplete/index'
-// import Layout from '../components/Layout/index'
-// import Menu from '../components/Menu/theMenu'
 
 function HomePage() {
   return (
@@ -104,6 +100,17 @@ function HomePage() {
             <a>RandomPerson</a>
           </Link>
         </li>
+        <li>
+          <Link href="/SearchHackerNews">
+            <a>SearchHackerNews</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/SearchHakerNewsEffect">
+            <a>SearchHakerNewsEffect</a>
+          </Link>
+        </li>
+        <hr />
         <li>
           <Link href="/UseReducer">
             <a>UseReducer</a>

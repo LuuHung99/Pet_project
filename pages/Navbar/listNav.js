@@ -4,14 +4,7 @@ import DetailNav from "./detailNav";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
-import {
-  TwitterOutlined,
-  LoadingOutlined,
-  Icon,
-  SmileTwoTone,
-  HeartTwoTone,
-  CheckCircleTwoTone,
-} from "@ant-design/icons";
+
 
 const { Header, Content, Footer } = Layout;
 

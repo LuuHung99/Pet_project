@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Row, Col, Input, Pagination } from "antd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getDataMovies } from "../actions/index";
 const { Search } = Input;
 
 function SearchMovies(props) {
   const dispatch = useDispatch();
   const [movies, setMovies] = useState("");
+  
+  const searchMoviesFail = (val) => {
+    if(movies.length === 0) {
+      alert('Pleasr search movies');
+    }
+    searchMoviesByKey(val);
 
+  }
 
   const searchMoviesByKey = (keyword) => {
     dispatch(getDataMovies(keyword));
@@ -19,7 +26,7 @@ function SearchMovies(props) {
         <Col span={12} offset={6}>
           <Search
             placeholder="Enter movies name, please"
-            onSearch={(val) => searchMoviesByKey(val)}
+            onSearch={(val) => searchMoviesFail(val)}
             enterButton
             value={movies}
             onChange={(e) => setMovies(e.target.value)}

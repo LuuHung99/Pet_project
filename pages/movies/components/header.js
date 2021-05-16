@@ -31,7 +31,7 @@ function HeaderPage(props) {
           <NavLink to="/newFilm">New Film</NavLink>
         </Menu.Item>
         <Menu.Item key="/searchFilm">
-          <NavLink to="/searchFilm">Searchh Film</NavLink>
+          <NavLink to="/searchFilm">Search Film</NavLink>
         </Menu.Item>
         {infoUser === null && (
           <Menu.Item key="/login">

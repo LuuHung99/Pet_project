@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Col, Row, Pagination, Button, Skeleton } from "antd";
 import * as api from "../services/api";
-import loadingData from "./loadingData";
+// import loadingData from "./loadingData";
 import HdPage from "./hd";
 
 const { Meta } = Card;
@@ -10,27 +10,30 @@ function ContentUser(props) {
   const [loadingHome, setLoadingHome] = useState(false);
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = useState(10);
 
   useEffect(() => {
     const getData = async () => {
       setLoadingHome(true);
-      const data = await api.getDataUser(page);
+
+      const data = await api.getDataUser(totalPages);
+      console.log(data);
       if (data) {
-        setData(data.results);
-        setTotalPages(data.total_pages);
-        if (page < 1) {
-          setPage(1);
-        } else if (page > data.total_pages) {
-          setPage(data.total_pages);
-        }
+        setData(data);
+
+        // if (totalPages < 1) {
+        //   setPage(1);
+        // }
+        // else if (totalPages > data) {
+        //   setPage(data)
+        // }
       }
       setLoadingHome(false);
     };
     getData();
-  }, [page]);
+  }, []);
 
-  if (loadingHome || data.length === 0) {
+  if (loadingHome) {
     return (
       <HdPage>
         <loadingData />
@@ -41,34 +44,44 @@ function ContentUser(props) {
   return (
     <>
       <HdPage />
-      <Row style={{ margin: "20px 20px", textAlign: "center" }}>
+      <Row >
         {data.map((item, index) => (
-          <Col span={4} key={index} style={{ margin: "20px" }}>
+          <Col span={6} key={index} style={{ padding: "20px"}}>
             <Card
               hoverable
-              style={{ width: 220 }}
+              style={{ width: 200, marginTop: "15px",  textAlign: 'center', backgroundColor: '#BDBDBD'}}
               cover={
                 <img
-                  alt={item.title}
-                  src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
-                  style={{ height: 250 }}
+                  alt={item.login}
+                  src={item.avatar_url}
+                  style={{ height: 150 ,width: 'auto', borderRadius: '50%', marginTop: '20px'}}
                 />
               }
             >
-              <Meta title={item.title} />
+              <Meta title={item.login} />
               <Button
                 type="primary"
                 style={{ marginTop: "15px", borderRadius: "15px" }}
               >
-                View profile
+                <a href={item.html_url}>View profile</a>
               </Button>
             </Card>
           </Col>
         ))}
       </Row>
-      <Row style={{ textAlign: "center", marginTop: "30px", paddingBottom: '20px' }}>
+      <Row style={{ textAlign: "center", marginTop: "30px", paddingBottom: '20px', display: "flex"}}>
         <Col span={24}>
-          <Pagination current={page} pageSize={20} total={totalPages} onChange={(pages) => setPage(pages)} />
+          <button 
+            
+          >
+            Prev
+          </button>
+          <button>{page}</button>
+          <button 
+            
+          >
+            Next
+          </button>
         </Col>
       </Row>
     </>

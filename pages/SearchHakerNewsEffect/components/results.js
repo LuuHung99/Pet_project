@@ -11,25 +11,19 @@ function ResultPage(props) {
   const [totalPage, setTotalPage] = useState(0);
   const [keywords, setKeywords] = useState("");
 
-  
-
   useEffect(() => {
     const getData = async () => {
-      // setLoading(true)
+      // setLoading(true)!~
       const data = await getDataNew(keywords, page);
       if (data) {
+        console.log(data.hits);
         setNews(data.hits);
         setTotalPage(data.nbPages);
-        
       }
       // setLoading(false);
     };
     getData();
   }, [page, keywords]);
-
-  if (loading) {
-    return <Skeleton active />;
-  }
 
   //Viet ham chuyen page
   const handleChangePage = (type) => {
@@ -37,12 +31,10 @@ function ResultPage(props) {
       if (page > 1) {
         setPage(page - 1);
       }
-      
     } else if (type === "next") {
       if (page < totalPage) {
         setPage(page + 1);
       }
-      
     }
   };
 

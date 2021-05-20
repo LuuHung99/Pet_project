@@ -4,28 +4,30 @@ import * as api from "../services/api";
 // import loadingData from "./loadingData";
 import HdPage from "./hd";
 
+
 const { Meta } = Card;
 
 function ContentUser(props) {
   const [loadingHome, setLoadingHome] = useState(false);
   const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(10);
+  const [page, setPage] = useState(1);
+
+
 
   useEffect(() => {
     const getData = async () => {
       setLoadingHome(true);
-
-      const data = await api.getDataUser(totalPages);
+      const data = await api.getDataUser();
       console.log(data);
       if (data) {
         setData(data);
 
-        // if (totalPages < 1) {
+        // if (page < 1) {
         //   setPage(1);
         // }
-        // else if (totalPages > data) {
-        //   setPage(data)
+        // else if (page > listPage) {
+        //   setPage(listPage)
         // }
       }
       setLoadingHome(false);
@@ -41,20 +43,45 @@ function ContentUser(props) {
     );
   }
 
+  // ham chuyen page
+  // const handleChangePage = (type) => {
+  //   if(type === "prev") {
+  //     if(page < 1) {
+  //       setPage(page - 1);
+  //       console.log(page);
+  //     }
+  //   }
+  //   if(type === "next") {
+  //     if(page > listPage) {
+  //       setPage(page + 1);
+  //     }
+  //   }
+  // }
+
   return (
     <>
       <HdPage />
-      <Row >
+      <Row>
         {data.map((item, index) => (
-          <Col span={6} key={index} style={{ padding: "20px"}}>
+          <Col span={4} key={index} style={{ padding: "20px" }}>
             <Card
               hoverable
-              style={{ width: 200, marginTop: "15px",  textAlign: 'center', backgroundColor: '#BDBDBD'}}
+              style={{
+                width: 200,
+                marginTop: "15px",
+                textAlign: "center",
+                backgroundColor: "#BDBDBD",
+              }}
               cover={
                 <img
                   alt={item.login}
                   src={item.avatar_url}
-                  style={{ height: 150 ,width: 'auto', borderRadius: '50%', marginTop: '20px'}}
+                  style={{
+                    height: 150,
+                    width: "auto",
+                    borderRadius: "50%",
+                    marginTop: "20px",
+                  }}
                 />
               }
             >
@@ -69,21 +96,19 @@ function ContentUser(props) {
           </Col>
         ))}
       </Row>
-      <Row style={{ textAlign: "center", marginTop: "30px", paddingBottom: '20px', display: "flex"}}>
+      {/* <Row
+        style={{
+          textAlign: "center",
+          marginTop: "30px",
+          paddingBottom: "20px",
+          display: "flex",
+        }}
+      >
         <Col span={24}>
-          <button 
-            
-          >
-            Prev
-          </button>
-          <button>{page}</button>
-          <button 
-            
-          >
-            Next
-          </button>
+          <button onClick={() =>handleChangePage("prev")}>Prev</button>
+          <button onClick={() =>handleChangePage("next")}>Next</button>
         </Col>
-      </Row>
+      </Row> */}
     </>
   );
 }

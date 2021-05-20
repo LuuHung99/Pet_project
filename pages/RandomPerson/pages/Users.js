@@ -34,7 +34,7 @@ function Users(props) {
               </Card>
             </Col>
           )
-      ): <h1>HideText</h1>}
+      ): <h1>HideText </h1>}
     </Row>
   );
 }

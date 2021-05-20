@@ -1,24 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Button, Skeleton } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-// import { getDataNews } from "../actions/index";
 // import {REMOTE_ITEMS_NEWS} from '../actions/types';
 
 function ResultPage(props) {
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
   const isLoading = useSelector((item) => item.searchNews.loading);
   const newsHackers = useSelector((item) => item.searchNews.new);
-//   const remoteItem = useSelector((item) => item.searchNews.remote);
-    const deleteItems = (index) => {
-        dispatch({
-            type: "REMOTE_ITEMS_NEWS",
-            payload: index
-        })
-    }
+  //   const remoteItem = useSelector((item) => item.searchNews.remote);
+  const deleteItems = (index) => {
+    dispatch({
+      type: "REMOTE_ITEMS_NEWS",
+      payload: index,
+    });
+  };
 
   useEffect(() => {
     dispatch({ type: "GET_DATA_NEWS" });
-  }, []);
+    setTotalPages(newsHackers.nbPages);
+  }, [page])
+
+
   if (isLoading) {
     return (
       <Row style={{ textAlign: "center", marginTop: "20px" }}>
@@ -29,10 +33,26 @@ function ResultPage(props) {
     );
   }
 
+  
+
+  //Ham chuyen pages
+  const handleChangePages = (type) => {
+    if(type === "prev") {
+      if(page > 1) {
+        setPage(page - 1);
+      }
+    }
+    if(type === "next") {
+      if(page < totalPages) {
+        setPage(page + 1);
+        console.log(newsHackers);
+      }
+     }
+  }
+
   return (
     <>
       <Row style={{ marginTop: "50px" }}>
-         
         <Col
           span={24}
           style={{
@@ -42,13 +62,13 @@ function ResultPage(props) {
             marginBottom: "20px",
           }}
         >
-          <Button type="primary">Prev</Button>
+          <Button type="primary" onClick={() => handleChangePages("prev")}>Prev</Button>
           <div
             style={{ fontWeight: "bold", fontSize: "20px", margin: "0 20px" }}
           >
-            {newsHackers.page + 1} of {newsHackers.nbPages}
+            {page} of {newsHackers.nbPages}
           </div>
-          <Button type="primary">Next</Button>
+          <Button type="primary" onClick={() => handleChangePages("next")}>Next</Button>
         </Col>
       </Row>
       <Row
@@ -68,7 +88,7 @@ function ResultPage(props) {
                   backgroundColor: "#D8D8D8",
                   padding: "10px 20px",
                   marginRight: "40px",
-                  marginBottom: "30px"
+                  marginBottom: "30px",
                 }}
               >
                 <h2>{item.title}</h2>
@@ -95,15 +115,21 @@ function ResultPage(props) {
                       border: "none",
                       backgroundColor: "#D8D8D8",
                       color: "red",
-                      
                     }}
-                    onClick={() =>deleteItems(index)}
+                    onClick={() => deleteItems(index)}
                   >
                     Remove
                   </a>
                 </div>
-                <div style={{display: "flex", justifyItems: 'flex-end', marginTop: '10px', justifyContent: 'flex-end'}}>
-                    <p>{item.created_at}</p>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyItems: "flex-end",
+                    marginTop: "10px",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <p>{item.created_at}</p>
                 </div>
               </Col>
             ))

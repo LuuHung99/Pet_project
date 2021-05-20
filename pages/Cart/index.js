@@ -111,6 +111,7 @@ function index(props) {
   };
 
   const inCrement = (value) => {
+    console.log("gia tri",value);
     // tìm đến phẩn tử có id = value
     let numbers = 0;
     let newData = [];

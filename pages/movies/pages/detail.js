@@ -18,6 +18,7 @@ function DetailMoviesPage(props) {
     const getData = async () => {
       setLoadingDetail(true);
       const data = await getDataMoviesById(id);
+      console.log(data);
       if (data) {
         setDetailMovie(data);
         setLoadingDetail(false);
@@ -72,14 +73,13 @@ function DetailMoviesPage(props) {
               ? detailMovie.production_companies.map((item, index) => (
                   <Col span={24} key={index}>
                     <Card
-                    bordered={false}
+                      bordered={false}
                       hoverable
-                      
                       cover={
                         <img
                           alt={detailMovie.title}
                           src={`https://image.tmdb.org/t/p/w200/${item.logo_path}`}
-                          style={{width: '50%', height: '50%'}}
+                          style={{ width: "50%", height: "50%" }}
                         />
                       }
                     >

@@ -8,7 +8,6 @@ function* getDataPersonSaga() {
     //dispatch action loading -bat dau call data tu api ve
     yield put(actions.getDataPerson(true));
     const data = yield call(api.getDataRandomPerson);
-    console.log(data);
     if (data) {
       yield put(actions.getDataPersonSuccess(data));
     } else {

@@ -9,7 +9,6 @@ import '../styles/SideBarModel.css';
 import '../styles/StripeMenu.css';
 import '../styles/layoutPage.css';
 import 'antd/dist/antd.css';
-
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

@@ -40,9 +40,6 @@ function HomeComponent(props) {
       </LayoutPage>
     );
   }
-
-  
-
   return (
     <LayoutPage>
       <ListMovies movies={movies} />

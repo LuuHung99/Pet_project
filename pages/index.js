@@ -101,6 +101,11 @@ function HomePage() {
           </Link>
         </li>
         <li>
+          <Link href="/RandomPerSonuseEffect">
+            <a>RandomPerSonuseEffect</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/SearchHackerNews">
             <a>SearchHackerNews</a>
           </Link>
@@ -127,8 +132,8 @@ function HomePage() {
           </Link>
         </li>
         <li>
-          <Link href="/ReduxCounter">
-            <a>ReduxCounter</a>
+          <Link href="/StockPhotos">
+            <a>StockPhotos</a>
           </Link>
         </li>
         <li>

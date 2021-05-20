@@ -91,6 +91,22 @@ function Reviews(props) {
     console.log(index);
   };
 
+  useEffect(() => {
+    const slider = setInterval(() => {
+      setShowList((oldList) => {
+        const showList = oldList + 1;
+        if(showList > data.length - 1) {
+          showList = 0;
+        }
+        return showList;
+      });
+      
+    }, 3000)
+    return () =>  clearInterval(slider) 
+  }, [showList])
+
+
+
   return (
     <div className={classes.container}>
       <div className={classes.title}>/ Reviews</div>

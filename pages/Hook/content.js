@@ -73,9 +73,7 @@ function Content(props) {
     }
   };
 
-  const changePage = (pages) => {
-    setPage(pages);
-  }
+ 
 
   return (
     <>
@@ -105,7 +103,7 @@ function Content(props) {
       </Row >
       <Row style={{ margin: " 20px 0px", textAlign: "center" }}>
             <Col span={24}>
-                <Pagination current={page} pageSize={3} total={totalItems} onChange={(pages) => changePage(pages)} />
+                <Pagination current={page} pageSize={3} total={totalItems} onChange={(pages) => setPage(pages)} />
             </Col>
       </Row>
     </>

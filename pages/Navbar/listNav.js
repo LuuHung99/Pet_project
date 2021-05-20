@@ -5,6 +5,13 @@ import DetailNav from "./detailNav";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Layout, Menu, Breadcrumb, Row, Col } from "antd";
 
+import {
+  TwitterOutlined,
+  LoadingOutlined,
+  SmileTwoTone,
+  HeartTwoTone,
+  CheckCircleTwoTone
+} from "@ant-design/colors";
 
 const { Header, Content, Footer } = Layout;
 
@@ -37,27 +44,24 @@ function listNav(props) {
               </ul>
             </div>
           </Col>
-          <Col span={4}>
+          {/* <Col span={4}>
             <TwitterOutlined />
             <LoadingOutlined />
             <SmileTwoTone />
             <HeartTwoTone twoToneColor="#eb2f96" />
             <CheckCircleTwoTone twoToneColor="#52c41a" />
-          </Col>
+          </Col> */}
         </Row>
       </Header>
       <Switch>
-      
-          <Route  path="/about" component={DetailNav} />
+        <Route path="/about" component={DetailNav} />
 
-    <Route  path="/projects" component={DetailNav} />
+        <Route path="/projects" component={DetailNav} />
 
-    <Route  path="/contact" component={DetailNav} />
+        <Route path="/contact" component={DetailNav} />
 
-    <Route  path="/profile" component={DetailNav} />
+        <Route path="/profile" component={DetailNav} />
       </Switch>
-
-     
     </Router>
   );
 }

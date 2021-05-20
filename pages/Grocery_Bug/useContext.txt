@@ -1,1 +1,0 @@
-- useContext(): KHo rieeng để cho các component dùng 

@@ -63,7 +63,7 @@ function Cocktails(props) {
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/detail" component={Details} />
+          <Route path="/detail/:id" component={Details} />
         </Switch>
       </Suspense>
     </Router>

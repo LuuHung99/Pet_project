@@ -48,10 +48,20 @@ function Accordion({ questions }) {
                     </div>
                     <div>
                       <button
-                        style={{ border: "none", backgroundColor: "#fff" }}
-                        onClick={(id) => setShowList(!showList, id)}
+                        style={{
+                          border: "none",
+                          backgroundColor: "#fff",
+                          cursor: "pointer",
+                        }}
+                        onClick={(id) => {
+                            setShowList(!showList, id);
+                        }}
                       >
-                        {showList ? <MinusOutlined style={{ marginRight: "20px" }} /> : <PlusOutlined style={{ marginRight: "20px" }} />}
+                        {showList ? (
+                          <MinusOutlined style={{ marginRight: "20px" }} />
+                        ) : (
+                          <PlusOutlined style={{ marginRight: "20px" }} />
+                        )}
                       </button>
                     </div>
                   </div>

@@ -34,7 +34,7 @@ export const newsReducer = (state = initialState, action) => {
         case types.REMOTE_ITEMS_NEWS: 
             return {
                 ...state,
-                new: action.news.filter((index) => index.objectID !== action.payload),
+                new: action.news.filter((index) => index.objectID !== action.payload.objectID),
                 error: null,
             }
         default:

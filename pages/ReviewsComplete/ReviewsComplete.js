@@ -54,9 +54,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button: {
-    paddingTop: "15px",
+    marginTop: '15px',
+    border: 'none',
     color: "#49a6e9",
     cursor: "pointer",
+    
   },
 }));
 
@@ -85,8 +87,8 @@ function ReviewsComplete(props) {
             <LeftOutlined onClick={() => props.nextLeft(items.id)} />
             <RightOutlined onClick={() => props.nextRight(items.id)} />
           </div>
-          <div className={classes.button}>
-            <button onClick={() => props.showNext(items.id)}>
+          <div >
+            <button onClick={() => props.showNext(items.id)} className={classes.button}>
               Subprise me
             </button>
           </div>

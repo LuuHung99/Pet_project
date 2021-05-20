@@ -27,7 +27,7 @@ export const getDataNewsFail = (error) => ({
     error
 })
 
-export const remoteItemsNews = (remote) => ({
+export const remoteItemsNews = (remotes) => ({
     type: types.REMOTE_ITEMS_NEWS,
-    remote
+    remotes
 })

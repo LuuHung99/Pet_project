@@ -15,7 +15,7 @@ function SearchFilm(props) {
 
   const searchMovies = async (key = "", currentPage = 1) => {
     if (key.length > 0) {
-      setLoadingSearch(true); 
+      setLoadingSearch(true);
       const data = await getDataSearchFilm(key, currentPage);
       if (data) {
         setListMovies(data.results);
@@ -25,12 +25,13 @@ function SearchFilm(props) {
         window.scrollTo(0, 0);
       }
     }
-    };
-    if (loadingSearch && listMovies.length === 0) {
-        <LayoutPage>
-            <LoadingData />
-        </LayoutPage>;
-    }
+  };
+  
+  if (loadingSearch && listMovies.length === 0) {
+    <LayoutPage>
+      <LoadingData />
+    </LayoutPage>;
+  }
 
   return (
     <LayoutPage>

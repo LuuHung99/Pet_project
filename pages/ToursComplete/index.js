@@ -16,6 +16,7 @@ function ListTour(props) {
       const result = await response.json();
       setLoadingHome(false);
       setData(result);
+
     } catch (err) {
       setLoadingHome(false);
       console.log(err);
@@ -48,24 +49,13 @@ function ListTour(props) {
       </>
     )
   }
-  // const [data, setData] = useState(listTours);
+  
   function deleteItems(id) {
     const newList = data.filter((e) => {
       if (e.id != id) return e;
     });
     setData(newList);
   }
-
-  //   if (newList.length < 1) {
-  //     setShowList(false);
-  //     // console.log(showList);
-  //   }
-  // }
-
-  // const Refresh = () => {
-  //   setShowList(true);
-  //   setData(listTours);
-  // };
 
   return (
     <>

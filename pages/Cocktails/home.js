@@ -51,11 +51,11 @@ function HomePage(props) {
 
   useEffect(() => {
     const getData = async () => {
-      setLoading(true);
+      // setLoading(true);
       const datas = await getDataCockTail(keywords);
       if (datas) {
         setData(datas.drinks);
-        setLoading(false);
+        // setLoading(false);
       }
     };
     getData();

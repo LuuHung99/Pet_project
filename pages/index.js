@@ -156,6 +156,11 @@ function HomePage() {
             <a>PaginationUser</a>
           </Link>
         </li>
+        <li>
+          <Link href="/ShopApp">
+            <a>ShopApp</a>
+          </Link>
+        </li>
         
       </ul>
     </div>

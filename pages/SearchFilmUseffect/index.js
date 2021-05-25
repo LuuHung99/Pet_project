@@ -7,10 +7,10 @@ function SearchFilmUseffect(props) {
   return (
     <Router>
       <Switch>
-        <Route  to="/">
+        <Route exact path="/SearchFilmUseffect">
           <SearchPage />
         </Route>
-        <Route to="/movies/:id">
+        <Route path="/movies/:id">
           <DetailPage />
         </Route>
       </Switch>

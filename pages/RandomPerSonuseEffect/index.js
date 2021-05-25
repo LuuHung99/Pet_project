@@ -12,6 +12,9 @@ import {
 const url = "https://randomuser.me/api/";
 const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
 
+
+
+
 function RandomPerson(props) {
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState(null);

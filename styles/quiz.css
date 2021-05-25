@@ -1,0 +1,9 @@
+.answer:hover {
+    background-color:#055e9e;
+    color: #fff;
+  }
+
+.next-quiz:hover {
+    background-color: #805900;
+    color: #fff;
+}

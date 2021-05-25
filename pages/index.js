@@ -157,8 +157,8 @@ function HomePage() {
           </Link>
         </li>
         <li>
-          <Link href="/ShopApp">
-            <a>ShopApp</a>
+          <Link href="/Quiz">
+            <a>Quiz</a>
           </Link>
         </li>
         

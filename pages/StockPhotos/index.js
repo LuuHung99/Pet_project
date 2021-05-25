@@ -1,9 +1,9 @@
 import React from "react";
-import ResultPage from "./components/results";
+import SearchPage from "./components/search";
 function StockPhoto(props) {
   return (
     <>
-      <ResultPage />
+      <SearchPage />
     </>
   );
 }

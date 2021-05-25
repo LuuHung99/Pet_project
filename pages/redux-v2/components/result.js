@@ -1,8 +1,16 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, {useEffect} from "react";
+import { useSelector, useDispatch } from "react-redux";
 function Result(props) {
   const virut = useSelector((state) => state.corona.viruts);
   console.log(virut);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'GET_DATA_CORONA'});
+  },[])
+
+
   return (
     <>
       <p>Moi nhiem: {virut.moi_nhiem}</p>

@@ -67,24 +67,30 @@ function Quiz(props) {
 
   return (
     <>
-      <Row style={{ padding: "100px", backgroundColor: "#fff", display: "flex", justifyContent: "center"}}>
-        {index < totalAnswer ? (
+      <Row
+        style={{
+          padding: "100px",
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        {index< 20 && <Col
+          span={24}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: "18px",
+            color: "green",
+          }}
+        >
+          <div>Grade: {grade} </div>
           <div>
-            <Col
-              span={24}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                fontSize: "18px",
-                color: "green",
-              }}
-            >
-              <div>Grade: {grade} </div>
-              <div>
-                Correct Answers : {currentAnswer}/{totalAnswer}
-              </div>
-            </Col>
-
+            Correct Answers : {currentAnswer}/{totalAnswer}
+          </div>
+        </Col>}
+        {index < totalAnswer ? (
+          <div style={{textAlign: "center"}}>
             <Col
               span={24}
               style={{ marginTop: "30px" }}
@@ -93,7 +99,6 @@ function Quiz(props) {
               <h1
                 style={{
                   fontSize: 42,
-                  textAlign: "center",
                   fontWeight: "bold",
                 }}
               >
@@ -103,7 +108,7 @@ function Quiz(props) {
 
             {listAnswer.length > 0
               ? listAnswer.map((item, index) => (
-                  <Col span={12} style={{ margin: "0 auto" }} key={index}>
+                  <Col span={12} style={{margin: '0 auto'}}  key={index}>
                     <button
                       onClick={() => handleNextQuestion(index)}
                       className="answer"
@@ -126,7 +131,47 @@ function Quiz(props) {
                 ))
               : null}
 
-            <Col
+           
+          </div>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              textAlign: "center",
+            }}
+          >
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAxNlqFQwo1gpn6ZuquBFHg8ytWFU5wNgKg&usqp=CAU"
+              alt="conguration"
+              style={{ width: "100%", height: "100%" }}
+            />
+            <h2 style={{ marginTop: "30px", color: "yellowgreen" }}>
+              Chúc mừng bạn đã hoàn thành câu hỏi:
+            </h2>
+            {/* <h2 style={{    color: "chocolate"}}>Điểm số</h2> */}
+            <p style={{ fontSize: "26px", color: "blueviolet" }}>{grade}</p>
+            <button
+              onClick={resetQuestion}
+              style={{
+                height: "auto",
+                width: "400px",
+                backgroundColor: "#ffb100",
+                border: "none",
+                fontSize: "17px",
+                fontWeight: "bold",
+                cursor: "pointer",
+                marginTop: "20px",
+                padding: "5px 0px",
+                color: "#222",
+              }}
+              className="next-quiz"
+            >
+              Play Again
+            </button>
+          </div>
+        )}
+        {index < 20 &&  <Col
               span={24}
               style={{ display: "flex", justifyContent: "flex-end" }}
             >
@@ -147,42 +192,7 @@ function Quiz(props) {
               >
                 Next Question
               </button>
-              
-              
-            </Col>
-          </div>
-        ) : (
-
-          <div style={{display: "flex", flexDirection: 'column', textAlign: "center" }}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfAxNlqFQwo1gpn6ZuquBFHg8ytWFU5wNgKg&usqp=CAU"
-             alt="conguration"
-              style={{width: "100%", height: "100%"}}
-            />
-            <h2 style={{ marginTop: "30px", color: "yellowgreen"}}>Chúc mừng bạn đã hoàn thành câu hỏi:</h2>
-            {/* <h2 style={{    color: "chocolate"}}>Điểm số</h2> */}
-            <p style={{fontSize: '26px', color: "blueviolet"}}>{grade}</p>
-            <button
-                onClick={resetQuestion}
-                style={{
-                  height: "auto",
-                  width: "400px",
-                  backgroundColor: "#ffb100",
-                  border: "none",
-                  fontSize: "17px",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  marginTop: "20px",
-                  padding: "5px 0px",
-                  color: "#222",
-                }}
-                className="next-quiz"
-              >
-                Play Again
-              </button>
-          </div>
-          
-          
-        )}
+            </Col>}
       </Row>
     </>
   );

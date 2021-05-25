@@ -47,6 +47,8 @@ function SearchFilm(props) {
         </Col>
       </Row>
       <ListMovies movies={listMovies} />
+
+      
       {/*Phan trang */}
       {listMovies.length > 0 && (
         <Row style={{ textAlign: "center", margin: "20px 0px" }}>

@@ -147,6 +147,11 @@ function HomePage() {
           </Link>
         </li>
         <li>
+          <Link href="/SearchFilmUseffect">
+            <a>SearchFilmUseffect</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/searchFilm-saga">
             <a>SearchFilm-saga</a>
           </Link>

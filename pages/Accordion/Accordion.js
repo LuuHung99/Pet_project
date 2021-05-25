@@ -44,7 +44,7 @@ function Accordion({ questions }) {
                   >
                     <div>
                       <h3>{title}</h3>
-                      {showList ? <p>{infor}</p> : null}
+                      {showList && <p>{infor}</p>}
                     </div>
                     <div>
                       <button
@@ -53,8 +53,9 @@ function Accordion({ questions }) {
                           backgroundColor: "#fff",
                           cursor: "pointer",
                         }}
-                        onClick={(id) => {
-                            setShowList(!showList, id);
+                        onClick={() => {
+                            setShowList(!showList);
+                            console.log(id);
                         }}
                       >
                         {showList ? (

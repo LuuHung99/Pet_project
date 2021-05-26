@@ -69,7 +69,7 @@ function index(props) {
             style={{
               fontSize: "34px",
               position: "relative",
-              paddingTop: "20px",
+              paddingTop: "20dpx",
             }}
           />
           <div

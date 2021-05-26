@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "antd/dist/antd.css";
-// import { makeStyles } from "@material-ui/core/styles";
-
-// const useStyles = makeStyles(() => ({
-
-// }));
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+ 
+ 
 import { Layout, Menu, Breadcrumb, Row, Col, Divider, Button } from "antd";
 import {
   ShoppingCartOutlined,

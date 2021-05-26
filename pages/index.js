@@ -80,6 +80,11 @@ function HomePage() {
           </Link>
         </li>
         <li>
+          <Link href="/Cart2">
+            <a>Cart2</a>
+          </Link>
+        </li>
+        <li>
           <Link href="/Cocktails">
             <a>Cocktails</a>
           </Link>

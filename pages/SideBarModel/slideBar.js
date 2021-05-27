@@ -21,14 +21,14 @@ import {
   Switch,
   Route,
   Link,
-  Redirect,
 } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container_slide: {
     backgroundColor: "#e6e6e6",
     width: "auto",
-    height: "720px",
+    height: "755px",
+ 
   },
   iconShow: {
     // display: "none",
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sidebar: {
     width: "350px",
-    height: "720px",
+    height: "755px",
     backgroundColor: "#fff",
     transition: "width 2s, height 2s, transform 2s ",
     // transitionDelay: '2s',
@@ -77,7 +77,9 @@ const useStyles = makeStyles((theme) => ({
 
     "& li:hover": {
       backgroundColor: "#b3b3b3",
+      
     },
+
   },
   footer: {
     position: "absolute",
@@ -100,7 +102,7 @@ function SlideBar(props) {
     setShowList(false);
   };
   return (
-    <Router>
+    <>
       <div className={classes.container_slide}>
         {!showList ? (
           <div className={classes.icon_sidebar}>
@@ -130,7 +132,7 @@ function SlideBar(props) {
             <div className={classes.sidebar_list}>
               <ul className={classes.sidebar_list_ul}>
                 <li>
-                  <Link to="/home">
+                  <Link to="/SideBarModel">
                     <HomeTwoTone /> Home
                   </Link>
                 </li>
@@ -167,18 +169,8 @@ function SlideBar(props) {
           </div>
         )}
       </div>
-      <Switch>
-        {/* <Route path="/home" /> */}
-
-        <Route path="/team" component={DetailSlideBar} />
-
-        <Route path="/project" component={DetailSlideBar} />
-
-        <Route path="/calendar" component={DetailSlideBar} />
-
-        <Route path="/documents" component={DetailSlideBar} />
-      </Switch>
-    </Router>
+     
+    </>
   );
 }
 

@@ -1,3 +1,10 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  background-color: #f1f5f8;
+  padding: 40px
+}
+
 .tour {
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 8px 20px 0 rgb(0 0 0 / 19%);
   margin-bottom: 50px;
@@ -28,7 +35,7 @@
 }
 
 .tour__button {
-  background-color: #ffffff;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,8 +43,9 @@
   padding-bottom: 20px;
   line-height: 1.5;
   font-size: 18px;
-  cursor: pointer;
-  border-color: red;
+ 
+ 
+
 }
 
 .btn_showHide {

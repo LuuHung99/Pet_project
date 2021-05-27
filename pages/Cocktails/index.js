@@ -49,7 +49,7 @@ function Cocktails(props) {
             The<b style={{ color: "green" }}>Cocktail</b>DB
           </Col>
           <Col span={8} offset={8} className={classes.menu}>
-            <Link to="/home">
+            <Link to="/Cocktails">
               <a>Home</a>
             </Link>
             <Link to="/about">
@@ -61,7 +61,7 @@ function Cocktails(props) {
       </div>
       <Suspense fallback={<Skeleton active />}>
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route path="/Cocktails" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/detail/:id" component={Details} />
         </Switch>

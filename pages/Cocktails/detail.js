@@ -75,7 +75,7 @@ function Detail(props) {
   return (
     <div className={classes.container}>
       <div className={classes.title}>
-        <Link to="/home">
+        <Link to="/Cocktails">
           <Button type="primary" className={classes.button_detail}>
             BACK HOME
           </Button>

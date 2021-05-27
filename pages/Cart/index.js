@@ -142,7 +142,7 @@ function index(props) {
         //sl = 0 =>status = false
         // SL = 1 => event 1-1 = 0
         if (item.quality - 1 > 0) {
-            numbers += item.quality - 1;
+          numbers += item.quality - 1;
           totals += (item.quality - 1) * item.price;
           newData.push({
             ...item,

@@ -171,6 +171,11 @@ function HomePage() {
             <a>Quiz</a>
           </Link>
         </li>
+        <li>
+          <Link href="/useContact">
+            <a>useContact</a>
+          </Link>
+        </li>
         
       </ul>
     </div>

@@ -10,9 +10,11 @@ function OurMenu(props) {
         paddingTop: "30px",
         paddingLeft: "200px",
         paddingRight: "150px",
+        
+       
       }}
     >
-      <Col span={12} offset={0}>
+      <Col span={12}>
         <div className="menu_info">
           <div className="menu_img">
             <img src={items.url} />

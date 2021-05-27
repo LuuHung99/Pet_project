@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import OurMenu from "./OurMenu";
-
 const listMenu = [
   {
     id: 1,
@@ -97,7 +96,7 @@ function OurMenus(props) {
     setShowList("breakfast");
   };
 
-  const handleShowLunch = (item) => {
+  const handleShowLunch = () => {
     setShowList("lunch");
   };
 

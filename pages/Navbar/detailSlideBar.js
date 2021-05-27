@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { CaretLeftOutlined } from "@ant-design/icons";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   sidebar_root: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "0",
     backgroundColor: "rgb(14, 30, 37)",
     width: "100%",
-    height: "756px",
+    height: "757px",
   },
   container: {
     position: "absolute",
@@ -34,38 +34,33 @@ const useStyles = makeStyles((theme) => ({
 function detailSlideBar(props) {
   const classes = useStyles();
   return (
-        <Router>
-    <div className={classes.sidebar_root}>
-      <div className={classes.container}>
-        <h1>Page Not Found</h1>
-        <div className={classes.text}>
-          <p>
-            Looks like you've followed a broken link or entered a URL that
-            doesn't exist on this site.
-          </p>
-        </div>
-        
-          <Link to="/" className={classes.backtohome}>
+    <>
+      <div className={classes.sidebar_root}>
+        <div className={classes.container}>
+          <h1>Page Not Found</h1>
+          <div className={classes.text}>
+            <p>
+              Looks like you've followed a broken link or entered a URL that
+              doesn't exist on this site.
+            </p>
+          </div>
+
+          <Link to="Navbar" className={classes.backtohome}>
             <CaretLeftOutlined />
             Back to our site
           </Link>
-          
-        
-        <hr />
-        <div>
-          <p>
-            If this is your site, and you weren't expecting a 404 for this path,
-            please visit Netlify's "page not found" support guide for
-            troubleshooting tips.
-          </p>
+
+          <hr />
+          <div>
+            <p>
+              If this is your site, and you weren't expecting a 404 for this
+              path, please visit Netlify's "page not found" support guide for
+              troubleshooting tips.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    
-   
-    <Route  path="/" />
-  
-    </Router>
+    </>
   );
 }
 

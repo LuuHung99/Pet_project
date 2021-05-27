@@ -8,7 +8,7 @@ function ToursComplete(props) {
   return (
     <>
       <Row>
-        <Col span={12} offset={6} className="row tour" key={id}>
+        <Col span={12} offset={6} className="row tour" key={id} style={{backgroundColor: '#fff'}}>
           <div className="tour__img">
             <img
               style={{ width: "100%", height: "45vh" }}
@@ -32,7 +32,7 @@ function ToursComplete(props) {
             </button>
           </p>
           <div className="tour__button">
-            <button onClick={() => deleteItems(id)}>Not interested</button>
+            <button onClick={() => deleteItems(id)} style={{borderColor: 'red', background:'none', cursor: 'pointer'}}>Not interested</button>
           </div>
         </Col>
       </Row>

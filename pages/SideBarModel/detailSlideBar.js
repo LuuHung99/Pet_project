@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 function detailSlideBar(props) {
   const classes = useStyles();
   return (
-    <Router>
+    <>
     <div className={classes.sidebar_root}>
       <div className={classes.container}>
         <h1>Page Not Found</h1>
@@ -45,7 +45,7 @@ function detailSlideBar(props) {
           </p>
         </div>
         
-          <Link to="home"  className={classes.backtohome}>
+          <Link to="SideBarModel" className={classes.backtohome}>
             <CaretLeftOutlined />
             Back to our site
           </Link> 
@@ -60,7 +60,7 @@ function detailSlideBar(props) {
         </div>
       </div>
     </div>
-    </Router>
+    </>
   );
 }
 

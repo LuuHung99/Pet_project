@@ -57,14 +57,14 @@ function TodoList(props) {
     setListTodo(newList);
   };
 
-  useEffect(() => {
-    const intervalRef = setInterval(() => {
-      setMessage("delete All Items...");
-    },2000);
-    return () => {
-      clearInterval(intervalRef);
-    }
-  },[])
+  // useEffect(() => {
+  //   const intervalRef = setInterval(() => {
+  //     setMessage("delete All Items...");
+  //   },2000);
+  //   return () => {
+  //     clearInterval(intervalRef);
+  //   }
+  // },[])
 
   const handleAddTodo = (val) => {
     console.log(val);

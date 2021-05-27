@@ -9,6 +9,7 @@ import '../styles/SideBarModel.css';
 import '../styles/StripeMenu.css';
 import '../styles/layoutPage.css';
 import '../styles/quiz.css';
+import '../styles/index.css';
 import 'antd/dist/antd.css';
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

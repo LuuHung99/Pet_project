@@ -12,7 +12,6 @@ function* searchMovieSaga({name}) {
       if (data.results.length > 0) {
         yield put(actions.searchMoviesSuccess(data));
       } 
-
       else  {
         yield put(
           actions.searchMoviesFailure({
@@ -20,7 +19,6 @@ function* searchMovieSaga({name}) {
             message: "Not found data",
           }),         
         );
-        
       }
       yield put(actions.stopDataMovies(false));
   } catch (e) {

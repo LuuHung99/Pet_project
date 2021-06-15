@@ -11,34 +11,21 @@ function DetailMoviesPage(props) {
   const { id } = useParams(); // lay duoc params tu url xuong
 
   //call api dua vao id bo phim
-  const [loadingDetail, setLoadingDetail] = useState(false);
   const [detailMovie, setDetailMovie] = useState({});
 
   useEffect(() => {
     const getData = async () => {
-      setLoadingDetail(true);
       const data = await getDataMoviesById(id);
       console.log(data);
       if (data) {
         setDetailMovie(data);
-        setLoadingDetail(false);
       }
     };
     getData();
   }, [id]);
 
   //Check object detailMovie khong rong
-  if (
-    loadingDetail &&
-    Object.keys(detailMovie).length === 0 &&
-    detailMovie.constructor === Object
-  ) {
-    return (
-      <LayoutPage>
-        <LoadingData />
-      </LayoutPage>
-    );
-  }
+ 
 
   //   console.log(detailMovie);
   return (

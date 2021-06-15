@@ -30,7 +30,6 @@ function SearchMovies(props) {
             enterButton
             value={movies}
             onChange={(e) => setMovies(e.target.value)}
-            
           />
         </Col>
       </Row>

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 function ButtonComponent(props) {
   const dispatch = useDispatch();
-  // const state = getState();
+   
   const count = useSelector(state => state.counter.count);
   console.log(count);
 
@@ -14,7 +14,7 @@ function ButtonComponent(props) {
     } else if (props.type === "decrement") {
       dispatch(actions.decrementCounter(count));
     }
-    // console.log('hi');
+   
   };
   return <button onClick={() => clickButton()}>{props.children}</button>;
 }

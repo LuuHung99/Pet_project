@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Button, Skeleton } from "antd";
 import { useSelector, useDispatch } from "react-redux";
+import * as actions from "../actions/index"
 // import {REMOTE_ITEMS_NEWS} from '../actions/types';
 
 function ResultPage(props) {
@@ -9,19 +10,15 @@ function ResultPage(props) {
   const [totalPages, setTotalPages] = useState(0);
   const isLoading = useSelector((item) => item.searchNews.loading);
   const newsHackers = useSelector((item) => item.searchNews.new);
-  //   const remoteItem = useSelector((item) => item.searchNews.remote);
+
   const deleteItems = (index) => {
-    dispatch({
-      type: "REMOTE_ITEMS_NEWS",
-      payload: index,
-    });
+    dispatch(actions.remoteItemsNews(index));
   };
 
   useEffect(() => {
     dispatch({ type: "GET_DATA_NEWS" });
     setTotalPages(newsHackers.nbPages);
   }, [page])
-
 
   if (isLoading) {
     return (
@@ -116,7 +113,7 @@ function ResultPage(props) {
                       backgroundColor: "#D8D8D8",
                       color: "red",
                     }}
-                    onClick={() => deleteItems(index)}
+                    onClick={() => deleteItems(item.objectID)}
                   >
                     Remove
                   </a>

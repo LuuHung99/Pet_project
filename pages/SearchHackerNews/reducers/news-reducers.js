@@ -4,7 +4,6 @@ const initialState = {
     loading: false,
     new: [],
     error: null,
-    remote: [],
 }
 
 export const newsReducer = (state = initialState, action) => {
@@ -31,10 +30,15 @@ export const newsReducer = (state = initialState, action) => {
                 new: [],
                 error: action.error
             }
-        case types.REMOTE_ITEMS_NEWS: 
+        case types.REMOTE_ITEMS_NEWS:
+            const idx = action.id;
+            //Lay id bi xoa
+            const newId = state.new.filter((e) => e.objectID === idx)[0];
+            //Lay tong new con lai
+            const totalNew = state.new.filter((e) => e.objectID !== newId);
             return {
                 ...state,
-                new: action.news.filter((index) => index.objectID !== action.payload.objectID),
+                new: totalNew,  
                 error: null,
             }
         default:

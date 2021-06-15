@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Alert, Button, Space } from "antd";
+import { Row, Col } from "antd";
 import { getDataQuiz } from "./api";
 function Quiz(props) {
   const [quiz, setQuiz] = useState([]);
@@ -21,7 +21,7 @@ function Quiz(props) {
   }, []);
 
   useEffect(() => {
-    if (0 < quiz.length && index < 20) {
+    if (0 < quiz.length && index < totalAnswer) {
       // const arrayAnswer = quiz[index].correct_answer.split(",");
       // const listAnswers = quiz[index].incorrect_answers.concat(arrayAnswer);
       // setListAnswer(listAnswers);
@@ -75,22 +75,24 @@ function Quiz(props) {
           justifyContent: "center",
         }}
       >
-        {index< 20 && <Col
-          span={24}
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            fontSize: "18px",
-            color: "green",
-          }}
-        >
-          <div>Grade: {grade} </div>
-          <div>
-            Correct Answers : {currentAnswer}/{totalAnswer}
-          </div>
-        </Col>}
+        {index < 20 && (
+          <Col
+            span={24}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              fontSize: "18px",
+              color: "green",
+            }}
+          >
+            <div>Grade: {grade} </div>
+            <div>
+              Answers Question : {currentAnswer}/{totalAnswer}
+            </div>
+          </Col>
+        )}
         {index < totalAnswer ? (
-          <div style={{textAlign: "center"}}>
+          <div style={{ textAlign: "center" }}>
             <Col
               span={24}
               style={{ marginTop: "30px" }}
@@ -108,7 +110,7 @@ function Quiz(props) {
 
             {listAnswer.length > 0
               ? listAnswer.map((item, index) => (
-                  <Col span={12} style={{margin: '0 auto'}}  key={index}>
+                  <Col span={12} style={{ margin: "0 auto" }} key={index}>
                     <button
                       onClick={() => handleNextQuestion(index)}
                       className="answer"
@@ -130,8 +132,6 @@ function Quiz(props) {
                   </Col>
                 ))
               : null}
-
-           
           </div>
         ) : (
           <div
@@ -149,7 +149,6 @@ function Quiz(props) {
             <h2 style={{ marginTop: "30px", color: "yellowgreen" }}>
               Chúc mừng bạn đã hoàn thành câu hỏi:
             </h2>
-            {/* <h2 style={{    color: "chocolate"}}>Điểm số</h2> */}
             <p style={{ fontSize: "26px", color: "blueviolet" }}>{grade}</p>
             <button
               onClick={resetQuestion}
@@ -171,28 +170,30 @@ function Quiz(props) {
             </button>
           </div>
         )}
-        {index < 20 &&  <Col
-              span={24}
-              style={{ display: "flex", justifyContent: "flex-end" }}
+        {index < totalAnswer && (
+          <Col
+            span={24}
+            style={{ display: "flex", justifyContent: "flex-end" }}
+          >
+            <button
+              onClick={() => handleChangeQuestion(index)}
+              style={{
+                height: "auto",
+                width: "400px",
+                backgroundColor: "#ffb100",
+                border: "none",
+                fontSize: "17px",
+                fontWeight: "bold",
+                cursor: "pointer",
+                marginTop: "20px",
+                padding: "5px 0px",
+              }}
+              className="next-quiz"
             >
-              <button
-                onClick={() => handleChangeQuestion(index)}
-                style={{
-                  height: "auto",
-                  width: "400px",
-                  backgroundColor: "#ffb100",
-                  border: "none",
-                  fontSize: "17px",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  marginTop: "20px",
-                  padding: "5px 0px",
-                }}
-                className="next-quiz"
-              >
-                Next Question
-              </button>
-            </Col>}
+              Next Question
+            </button>
+          </Col>
+        )}
       </Row>
     </>
   );
